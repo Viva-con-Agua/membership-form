@@ -40,13 +40,6 @@
                     </vca-input>
                 </vca-field-row>
 
-                <vca-checkbox
-                    v-if="!company"
-                    v-model="additional">
-                            <div v-html="$t('contactform.additional')"></div>
-                </vca-checkbox>
-
-                <div v-if="additional">
 
                     <vca-field-row>
                         <vca-input 
@@ -91,7 +84,7 @@
                     </vca-field-row>
 
                         <vca-country preselection="DE" countryCode="DE" :rules="$v.country" ref="country" v-model="country" label="" :placeholder="$t('contactform.country.placeholder')" :errorMsg="$t('contactform.country.error')"/>
-                </div>
+
                 <div class="color-grey vca-right">{{ $t('contactform.required') }}</div>
             </vca-field>
 
@@ -121,24 +114,6 @@ export default {
             },
             set(value) {
                 this.$store.commit('payment/country', value)
-            }
-        },
-        additional: {
-            get () {
-                return this.$store.state.payment.donation_receipt
-            },
-            set(value) {
-                this.$store.commit('payment/donation_receipt', value)
-            }
-        }
-        
-    },
-    watch:{
-        company: function(val) {
-            if (val) {
-                this.additional = true
-            } else {
-                this.additional = false
             }
         }
     },
@@ -177,50 +152,33 @@ export default {
                 }
             }
         } else {
-            if (this.additional) {
-                return {
-                    anonymous: {
-                        email: {
-                            email,
-                            required
-                        },
-                        first_name: {
-                            required
-                        },
-                        last_name: {
-                            required
-                        },
-                        street: {
-                            required
-                        },
-                        number: {
-                            required
-                        },
-                        zip: {
-                            required
-                        },
-                        city: {
-                            required
-                        }
+            return {
+                anonymous: {
+                    email: {
+                        email,
+                        required
                     },
-                    country: {
+                    first_name: {
+                        required
+                    },
+                    last_name: {
+                        required
+                    },
+                    street: {
+                        required
+                    },
+                    number: {
+                        required
+                    },
+                    zip: {
+                        required
+                    },
+                    city: {
                         required
                     }
-                }
-            } else {
-                return {
-                    anonymous: {
-                        email: {
-                            email,
-                            required
-                        },
-                        first_name: {
-                            required
-                        },
-                        last_name: {
-                            required
-                        }
-                    }
+                },
+                country: {
+                    required
                 }
             }
         }

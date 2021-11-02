@@ -1,12 +1,16 @@
 import api from './api.js'
+import payment from './payment'
 
 const form = {
     namespaced: true,
+    modules: {
+        payment: payment
+    },
     state: () => ({
         current: {
             product: null,
             type: "member",
-            min_amount: 100,
+            min_amount: [500, 6000],
             payment_types: [
                 { name: 'civisepa', title: 'payment.type.sepa', default: true },
                 { name: 'sepa', title: 'payment.type.sepa' },
@@ -26,7 +30,7 @@ const form = {
             return state.current.product
         },
         minAmount(state) {
-            return state.current.min_amount
+            return (!state.payment.interval) ? state.current.min_amount[0] : state.current.min_amount[1]
         },
         paymentTypes(state) {
             return state.current.payment_types

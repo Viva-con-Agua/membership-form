@@ -1,11 +1,10 @@
 <template>
-    <vca-field class="typo-roboto" :label="$t('amount.label')">
+    <vca-field class="typo-roboto" :label="this.$t('amount.label', {0: this.minAmount / 100, 1: this.money.currency})">
         <vca-money-input 
             ref="money"
             v-model="money"
-            :css="getCSS"
+            css="main-color"
             :min="minAmount / 100"
-            :threshold="threshold"
             :rules="$v.money"
             :errorMsg="errorMessage"
             :topText="$t('amount.toptext')"/>
@@ -27,24 +26,12 @@ export default {
         }
     },
     data() {
-        return {
-            css: "primary-light",
-            threshold: {
-                amount: 10000,
-                css: "main-color"
-            }
-        }
+        return {}
     },
     computed: {
        ...mapGetters({
            minAmount: 'form/minAmount'
         }),
-        getCSS() {
-            if (this.threshold && this.threshold.amount <= this.money.amount) {
-                return this.threshold.css
-            }
-            return this.css
-        },
         errorMessage() {
             return (this.minAmount > 0) ? this.$t('amount.error.minAmount', {0: this.minAmount / 100, 1: this.money.currency}) : this.$t('amount.error.default')
         },

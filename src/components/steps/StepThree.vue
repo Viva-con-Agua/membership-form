@@ -4,8 +4,8 @@
             <h2> Payment_id: {{payment}} </h2>
             <span>{{ $t('error.payment') }}</span>
         </div>
-        <PaymentSelection v-if="!abo" ref="selection" :product="product" v-on:success="success" v-on:error="error" @isInvalid="validate"/>
-        <SubscribeSelection v-if="abo" ref="selection" :product="product" v-on:success="success" v-on:error="error" @isInvalid="validate"/>
+        <PaymentSelection v-if="!interval" ref="selection" :product="product" v-on:success="success" v-on:error="error" @isInvalid="validate"/>
+        <SubscribeSelection v-if="interval" ref="selection" :product="product" v-on:success="success" v-on:error="error" @isInvalid="validate"/>
         <Policies />
         <vca-arrow-navigation @next="commit" @success="success" @back="back" :backLabel="this.$t('buttons.back')" :nextLabel="getLabel" :showNext="paymentType != 'paypal'" :nextLong="true" :nextEnabled="!isInvalid"/>
     </div>
@@ -30,7 +30,7 @@ export default {
         ...mapGetters({
             payment: 'payment/payment_id',
             money: 'payment/money',
-            abo: 'payment/abo',
+            interval: 'payment/interval',
             paymentType: 'payment/payment_type'
         }),
         getLabel() {

@@ -9,8 +9,8 @@ export default {
     data() {
         return {
             abos: [
-                { label: this.$t("abo.no"), value: 'monthly' },
-                { label: this.$t("abo.yes"), value: 'yearly' }
+                { label: this.$t("abo.no"), value: 'no' },
+                { label: this.$t("abo.yes"), value: 'yes' }
             ]
         }
     },

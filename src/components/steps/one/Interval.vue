@@ -1,26 +1,28 @@
 <template>
-    <vca-field v-if="abo" class="typo-roboto" :label="$t('interval.label')">
-
-        <vca-card class="vca-row">
-            <IntervalButton interval='monthly' :drops="0" />
-            <IntervalButton interval='quarterly' :drops="4" />
-            <IntervalButton interval='half' :drops="2" />
-            <IntervalButton interval='yearly' :drops="1" />
-        </vca-card>
-
-
+    <vca-field class="typo-roboto" :label="$t('interval.label')">
+        <vca-selection :selection="intervals" v-model="interval"/>
     </vca-field>
 </template>
 <script>
-import { mapGetters } from 'vuex'
-import IntervalButton from '@/components/steps/one/IntervalButton'
 export default {
     name: 'Interval',
-    components: {IntervalButton},
+    data() {
+        return {
+            intervals: [
+                { label: this.$t("interval.monthly"), value: 'monthly' },
+                { label: this.$t("interval.yearly"), value: 'yearly' }
+            ]
+        }
+    },
     computed: {
-        ...mapGetters({
-            abo: 'payment/abo'
-        })
+        interval: {
+            get () {
+                return this.$store.state.payment.interval
+            },
+            set(value) {
+                this.$store.commit('payment/interval', value)
+            }
+        }
     }
 }
 </script>
