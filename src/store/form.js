@@ -30,7 +30,7 @@ const form = {
             return state.current.product
         },
         minAmount(state) {
-            return (!state.payment.interval) ? state.current.min_amount[0] : state.current.min_amount[1]
+            return (state.payment.interval == 'monthly') ? state.current.min_amount[0] : state.current.min_amount[1]
         },
         paymentTypes(state) {
             return state.current.payment_types
