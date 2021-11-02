@@ -41,6 +41,9 @@ const payment = {
             state.payment_id = val.id  
         },
         money(state, val) {
+            if (!val.currency) {
+                val.currency = state.money.currency
+            }
             state.money = val
             state.money.amount = parseInt(state.money.amount)
         },

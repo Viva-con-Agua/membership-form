@@ -1,21 +1,23 @@
 <template>
-    <vca-drop-button :selected="paymentInterval == interval" @click.prevent="paymentInterval = interval">
-        <div v-if="paymentInterval != interval" class="vca-row vca-center btn-icon">
+    <vca-drop-button :selected="amount == selectedAmount" @click.prevent="amount = selectedAmount">
+        <div v-if="amount != selectedAmount" class="vca-row vca-center btn-icon">
             <div v-for="(drop, index) in drops" :key="index" class="icon-box"><img src="~@/assets/icons/icon_vca.png" /></div>
         </div>
         <div v-else class="vca-row vca-center btn-icon">
             <div v-for="(drop, index) in drops" :key="index" class="icon-box"><img src="~@/assets/icons/icon_vca_white.png" /></div>
         </div>
-        <span class="btn-amount">{{ $t('interval.' + interval ) }}</span>
+        <div class="btn-amount vca-center"><h3>{{ $t('amounts.' + selectedAmount + '.title', {0: money.currency } ) }}</h3></div>
+        <div>{{ $t('amounts.' + selectedAmount + '.subtitle') }}</div>
     </vca-drop-button>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
-    name: 'IntervalButton',
+    name: 'AmountButton',
     props: {
-        interval: {
+        selectedAmount: {
             type: String,
-            default: 'monthly'
+            default: "100"
         },
         drops: {
             type: Number,
@@ -23,18 +25,22 @@ export default {
         }
     },
     computed: {
-        paymentInterval: {
+        amount: {
             get () {
-                return this.$store.state.payment.interval
+                return this.$store.state.payment.money.amount
             },
             set(value) {
-                this.$store.commit('payment/interval', value)
+                this.$store.commit('payment/money', { 'amount': value })
             }
-        }
+        },
+       ...mapGetters({
+           money: 'payment/money',
+           minAmount: 'form/minAmount'
+        }),
     },
     methods: {
         dropSelected(val) {
-            return (this.paymentInterval == val) ? 'selected' : ''
+            return (this.amount == val) ? 'selected' : ''
         },
         modulo(index, mod) {
             return ((index + 1) % mod) == 1 
@@ -65,6 +71,10 @@ export default {
     color: #008fc2;
     min-height: 200px;
     margin: 0 auto;
+
+    .btn-amount {
+        font-size: 1.5em;
+    }
 
     .btn-icon {
         width: max-content;

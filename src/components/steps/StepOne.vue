@@ -1,29 +1,22 @@
 <template>
     <div class="stepone">
-
-        <div class="slider-box">
-            <FaucetSlider />
-        </div>
-
+        
+        <Interval />
+        <AmountButtons />
         <Amount ref="amount" />
 
-        <div v-if="hasSubscription">
-            <Abo />
-            <Interval />
-        </div>
-
         <vca-arrow-navigation @next="submit" :showBack="false" :nextLabel="this.$t('buttons.next')" :nextEnabled="isValid"/>
+        
     </div>
 
 </template>
 <script>
-import FaucetSlider from '@/components/slider/FaucetSlider'
 import Amount from '@/components/steps/one/Amount.vue'
-import Abo from '@/components/steps/one/Abo.vue'
 import Interval from '@/components/steps/one/Interval.vue'
+import AmountButtons from '@/components/steps/one/AmountButtons.vue'
 export default {
     name: 'StepOne',
-    components: {Amount, Abo, Interval, FaucetSlider},
+    components: {Amount, Interval, AmountButtons},
     data() {
         return {
             isValid: true,

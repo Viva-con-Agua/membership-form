@@ -57,9 +57,9 @@
   },
   "information": {
     "label": "Hinweise:",
-    "info_1": "Monatliche Spenden können jederzeit gekündigt werden.",
-    "info_2": "Deine Spende ist steuerlich absetzbar. Eine Spendenbescheinigung erhältst du im Februar des Folgejahres.",
-    "info_3": "Viva con Agua nutzt deine Daten ausschließlich zur Spendenverwaltung. Wir geben sie nicht an Dritte weiter.",
+    "info_1": "Die Fördermitgliedschaft kann jederzeit gekündigt werden.",
+    "info_2": "Deine Fördermitgliedschaft ist steuerlich absetzbar. Eine Zuwendungsbescheinigung erhältst du im Februar des Folgejahres.",
+    "info_3": "Viva con Agua nutzt deine Daten ausschließlich zur Verwaltung deiner Fördermitgliedschaft. Wir geben sie nicht an Dritte weiter.",
     "info_4": "Viva con Agua de Sankt Pauli e.V. ist vom Finanzamt Hamburg-Nord als gemeinnützig anerkannt. Steuernummer: 17/454/04711. Letzter Bescheid vom 21.09.2020"
   },
   "buttons": {
@@ -74,31 +74,50 @@
     "workshop": "Damit unterstützt du uns z.B. mit mindestens einem Hygieneworkshop an einer Schule"
   },
   "amount": {
-    "label": "Du willst einen anderen Betrag spenden? Kein Problem!",
+    "label": "Du möchtest uns mit einem anderen Betrag unterstützen? Kein Problem! (Ab {0} {1})",
     "toptext": "anderer Betrag",
     "error": {
       "default": "Bitte wähle einen Betrag aus",
       "minAmount": "Bitte wähle mindestens einen Betrag von {0} {1} aus"
     }
   },
-  "abo": {
-    "label": "Wähle dein Interval",
-    "no": "Monatsbeitrag",
-    "yes": "Jahresbeitrag"
-  },
   "interval": {
-    "label": "Wähle dein Spendenintervall",
-    "monthly": " monatlich",
-    "yearly": "1x im Jahr",
-    "half": "2x im Jahr",
-    "thrice": "3x im Jahr",
-    "quarterly": "4x im Jahr"
+    "label": "Wähle dein Interval",
+    "monthly": "Monatsbeitrag",
+    "yearly": "Jahresbeitrag"
+  },
+  "amounts": {
+    "label": "Wähle deinen Mitgliedsbeitrag",
+    "500": {
+      "title": "5 {0}",
+      "subtitle": "TROPFEN Fördermitglied"
+    },
+    "1000": {
+      "title": "10 {0}",
+      "subtitle": "BRUNNEN Fördermitglied"
+    },
+    "2000": {
+      "title": "20 {0}",
+      "subtitle": "QUELLE Fördermitglied"
+    },
+    "6000": {
+      "title": "60 {0}",
+      "subtitle": "TROPFEN Fördermitglied"
+    },
+    "12000": {
+      "title": "120 {0}",
+      "subtitle": "BRUNNEN Fördermitglied"
+    },
+    "24000": {
+      "title": "240 {0}",
+      "subtitle": "QUELLE Fördermitglied"
+    }
   },
   "paymentselection": {
     "label": "Ich spende via"
   },
   "contacttypeselection": {
-    "label": "Ich spende als",
+    "label": "Ich schließe eine Fördermitgliedschaft ab als",
     "individual": "Privatperson",
     "company": "Unternehmen"
   },
@@ -195,6 +214,11 @@
   "thanks": {
     "header": "DANKE",
     "subheader": "für deinen Support und dein Vertrauen!",
+    "footer": {
+      "text": "Danke, dass du unsere Projekte für sauberes Trinkwasser mit {0} {1} {2} unterstützen möchtest!",
+      "yearly": "jährlich",
+      "monthly": "monatlich"
+    },
     "text": "Deine Spende über {0} hat {1}",
     "example": {
       "default": "unter anderem in unserem Projektland Uganda noch mehr Menschen den Zugang zu sauberem Trinkwasser ermöglicht",
