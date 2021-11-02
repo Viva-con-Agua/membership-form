@@ -1,0 +1,63 @@
+/*
+dev.mode
+ */
+@import "_mixins.scss";
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0 !important;
+  display: flex;
+}
+
+#app {
+    margin: 0 auto;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: min-content;
+}
+
+#app-content {
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+#app-footer {
+    z-index: 100;
+    flex-shrink: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+// VcA-Colors
+$main-color:            #008fc3;
+$primary-light:         #b8d8ea;
+$primary-dark:          #002e6d;
+$secondary-light:       #55c0e9;
+$secondary-dark:        #03558c;
+
+$white:                 #FFFFFF;
+$grey:                  #CCCCCC;
+$grey-dark:             #AAAAAA;
+$red:                   #f12222;
+$red-dark:              #b50846;
+$green:                 #33af50;
+$green-dark:            #559955;
+$yellow:                #ffe500;
+$yellow-dark:           #ffe500;
+$orange:                #ff5522;
+$orange-dark:           #fb4202;

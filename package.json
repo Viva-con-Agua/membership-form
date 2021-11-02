@@ -1,0 +1,59 @@
+{
+    "name": "membership-form",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "serve_docker": "vue-cli-service serve --port 80",
+        "widget": "vue-cli-service build --target wc --inline-vue --name donation-form ./src/main.wc.js",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint"
+    },
+    "dependencies": {
+        "@gtm-support/vue2-gtm": "^1.1.0",
+        "@stripe/stripe-js": "^1.5.0",
+        "axios": "^0.21.1",
+        "core-js": "^3.14.0",
+        "get-user-locale": "^1.4.0",
+        "stripe": "^8.163.0",
+        "style-loader": "^2.0.0",
+        "vca-ui": "^0.4.28",
+        "vue": "^2.6.14",
+        "vue-flag-icon": "^1.0.6",
+        "vue-i18n": "^8.24.4",
+        "vue-notification": "^1.3.20",
+        "vue-paypal-checkout": "^3.2.0",
+        "vue-router": "^3.5.1",
+        "vue-stripe-checkout": "^3.3.1",
+        "vueperslides": "^2.15.2",
+        "vuex": "^3.6.2"
+    },
+   "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "parserOptions": {
+            "parser": "babel-eslint"
+        },
+        "rules": {}
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ]
+}

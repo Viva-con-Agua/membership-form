@@ -1,0 +1,20 @@
+// Breakpoints
+$large: 768px;
+
+@mixin media($keys...) {
+  @each $key in $keys {
+    @if $key == small {
+      @media only screen and (max-width: $large - 1) {
+        @content;
+      }
+    } @else if $key == large {
+      @media only screen and (min-width: $large) {
+        @content;
+      }
+    } @else if type_of($key) == number {
+      @media only screen and (max-width: $key) {
+        @content;
+      }
+    }
+  }
+}
