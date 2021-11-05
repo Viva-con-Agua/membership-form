@@ -13,6 +13,7 @@ const paypal = {
             product_id: ''
         },
         plan_id:null,
+        start_time: new Date().toISOString() ,
         status: null,
         checkout_id: null,
         invoice_id: null
@@ -42,6 +43,9 @@ const paypal = {
 
                 }
             ]
+        },
+        start_time(state) {
+            return state.start_time
         }
     },
     mutations: {
@@ -62,6 +66,9 @@ const paypal = {
         },
         invoice_id(state, val) {
             state.invoice_id = val
+        },
+        start_time(state, val) {
+            state.start_time = val
         }
 
     },
@@ -95,6 +102,7 @@ const paypal = {
                     api.call.post('/v1/donations/payment/paypal/subscription', data)
                     .then((response) => {
                             commit("plan_id", response.data.payload.subscription_plan_id)
+                            commit("start_time", response.data.payload.start_time)
                         resolve()
                     })
                     .catch(error => {

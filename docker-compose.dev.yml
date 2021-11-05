@@ -14,7 +14,7 @@ services:
       - /usr/src/app/node_modules
     networks:
       domain_net:
-        ipv4_address: ${domain_net_ip}
+        ipv4_address: ${docker_ip}
 
 networks:
   domain_net:

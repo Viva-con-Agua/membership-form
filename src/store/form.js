@@ -10,7 +10,7 @@ const form = {
         current: {
             product: null,
             type: "member",
-            min_amount: [500, 6000],
+            min_amount: 500,
             payment_types: [
                 { name: 'civisepa', title: 'payment.type.sepa', default: true },
                 { name: 'sepa', title: 'payment.type.sepa' },
@@ -30,13 +30,16 @@ const form = {
             return state.current.product
         },
         minAmount(state) {
-            return (state.payment.interval == 'monthly') ? state.current.min_amount[0] : state.current.min_amount[1]
+            return (state.payment.interval == 'monthly') ? state.current.min_amount : state.current.min_amount * 12
         },
         paymentTypes(state) {
             return state.current.payment_types
         },
         subscriptionTypes(state) {
             return state.current.subscription_types
+        },
+        company(state) {
+            return state.current.company
         }
     },
     mutations: {

@@ -51,7 +51,7 @@ export default {
         this.element.mount(this.$refs.card)
     },
     created() {
-        this.stripe = window.Stripe(process.env.VUE_APP_STRIPE_PUBLIC_KEY)
+        this.stripe = window.Stripe(this.company.stripe_public_key)
         this.elements = this.stripe.elements()
         this.element = this.elements.create('card', this.options)
 
@@ -71,7 +71,8 @@ export default {
             return this.cardInvalid
         },
         ...mapGetters({
-            billing_details: 'payment/stripe/billing_details'
+            billing_details: 'payment/stripe/billing_details',
+            company: 'form/company'
         })
     },
     methods: {

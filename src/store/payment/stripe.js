@@ -83,6 +83,7 @@ const stripe = {
         setup_intent_finish({rootState,state}) {
             var data = {
                 payment_id: rootState.payment.payment_id,
+                payment_method: state.payment_method,
                 status: state.status
             }
             return new Promise((resolve, reject) => {
