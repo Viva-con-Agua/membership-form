@@ -34,7 +34,7 @@ const membership = {
                 })
             })
         },
-        update({rootState, state}) {
+        update({rootState, state, commit}) {
             var data = {
                 id: state.id,
                 contact: rootState.payment.contact,
