@@ -4,6 +4,7 @@ import api from './api.js'
 import payment from './payment'
 import knownfrom from './knownfrom.js'
 import form from './form.js'
+import membership from './membership.js'
 
 Vue.use(Vuex)
 export default new Vuex.Store({
@@ -11,7 +12,8 @@ export default new Vuex.Store({
     modules: {
         payment: payment,
         knownfrom: knownfrom,
-        form: form
+        form: form,
+        membership:membership
     },
     state: {
         loading: false,
@@ -66,6 +68,10 @@ export default new Vuex.Store({
     actions: {
         async init({dispatch}, data) {
             await dispatch({type: 'form/get', data: data.data})
+        },
+        async process({dispatch}) {
+                await dispatch("payment/process").catch((error) => {console.log(error)})
+                await dispatch("membership/process")
         },
         contact({state}) {
 

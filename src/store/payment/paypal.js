@@ -96,6 +96,7 @@ const paypal = {
             var data = {
                 payment_id: rootState.payment.payment_id,
                 interval: rootState.payment.interval,
+                total_cycles: rootState.payment.cycles,
                 product_id: rootState.form.current.product.paypal_id
             }
             return new Promise((resolve, reject) => {

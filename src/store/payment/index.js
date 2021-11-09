@@ -34,6 +34,7 @@ const payment = {
         interval: "monthly",
         country: [],
         abo: false,
+        cycles: 12,
         donation_receipt: false
     },
     mutations: {
