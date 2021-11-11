@@ -32,7 +32,6 @@ const payment = {
         },
         payment_type: "",
         interval: "monthly",
-        expiration: "year",
         country: [],
         abo: false,
         cycles: 12,
@@ -52,8 +51,8 @@ const payment = {
         interval(state, val) {
             state.interval = val
         },
-        expiration(state, val) {
-            state.expiration = val
+        cycles(state, val) {
+            state.cycles = val
         },
         payment_type(state, val) {
             state.payment_type = val
@@ -84,8 +83,8 @@ const payment = {
         money (state) {
             return state.money
         },
-        expiration(state) {
-            return state.expiration
+        cycles(state) {
+            return state.cycles
         },
         interval(state) {
             return state.interval

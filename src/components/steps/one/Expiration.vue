@@ -9,18 +9,18 @@ export default {
     data() {
         return {
             expirations: [
-                { label: this.$t("expiration.year"), value: 'year' },
-                { label: this.$t("expiration.never"), value: 'never' }
+                { label: this.$t("expiration.year"), value: 12 },
+                { label: this.$t("expiration.never"), value: 0 }
             ]
         }
     },
     computed: {
         expiration: {
             get () {
-                return this.$store.state.payment.expiration
+                return this.$store.state.payment.cycles
             },
             set(value) {
-                this.$store.commit('payment/expiration', value)
+                this.$store.commit('payment/cycles', value)
             }
         }
     }
