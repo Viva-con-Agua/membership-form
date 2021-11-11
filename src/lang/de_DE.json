@@ -58,8 +58,8 @@
   "information": {
     "label": "Hinweise:",
     "info_1": "Die Fördermitgliedschaft kann jederzeit gekündigt werden.",
-    "info_2": "Deine Fördermitgliedschaft ist steuerlich absetzbar. Eine Zuwendungsbescheinigung erhältst du im Februar des Folgejahres.",
-    "info_3": "Viva con Agua nutzt deine Daten ausschließlich zur Verwaltung deiner Fördermitgliedschaft. Wir geben sie nicht an Dritte weiter.",
+    "info_2": "Die Fördermitgliedschaft ist steuerlich absetzbar. Eine Zuwendungsbescheinigung erhältst du im Februar des Folgejahres.",
+    "info_3": "Viva con Agua nutzt deine Daten ausschließlich zur Verwaltung der Fördermitgliedschaft. Wir geben sie nicht an Dritte weiter.",
     "info_4": "Viva con Agua de Sankt Pauli e.V. ist vom Finanzamt Hamburg-Nord als gemeinnützig anerkannt. Steuernummer: 17/454/04711. Letzter Bescheid vom 21.09.2020"
   },
   "buttons": {
@@ -82,12 +82,18 @@
     }
   },
   "interval": {
-    "label": "Wähle dein Interval",
+    "label": "Wähle das Beitragsintervall",
     "monthly": "Monatsbeitrag",
     "yearly": "Jahresbeitrag"
   },
+  "expiration": {
+    "label": "Wähle die Laufzeit",
+    "infobox": "Natürlich kannst auch diese Fördermitgliedschaft jederzeit beenden.",
+    "year": "1 Jahr",
+    "never": "Ohne Enddatum"
+  },
   "amounts": {
-    "label": "Wähle deinen Mitgliedsbeitrag",
+    "label": "Wähle den Mitgliedsbeitrag",
     "500": {
       "title": "5 {0}",
       "subtitle": "TROPFEN Fördermitglied"
@@ -117,12 +123,12 @@
     "label": "Ich spende via"
   },
   "contacttypeselection": {
-    "label": "Ich schließe eine Fördermitgliedschaft ab als",
+    "label": "Ich verschenke eine Fördermitgliedschaft ab als",
     "individual": "Privatperson",
     "company": "Unternehmen"
   },
   "contactform": {
-    "label": "Persönliche Angaben",
+    "label": "Deine persönlichen Angaben",
     "additional": "Ich möchte eine Spendenquittung erhalten",
     "required": "* Diese Angaben benötigen wir von dir auf jeden Fall.",
     "company": {
@@ -179,6 +185,7 @@
   },
   "payment": {
     "type": {
+      "civisepa": "SEPA Lastschrift",
       "sepa": "SEPA",
       "creditcard": "Kreditkarte",
       "paypal": "Paypal"
@@ -230,7 +237,7 @@
   },
   "next": {
     "label": "So geht es weiter",
-    "email": "Du erhältst gleich eine Bestätigungsmail von uns.",
+    "email": "Du erhältst gleich die Urkunde zur Fördermitgliedschaft von uns per E-Mail.",
     "receipt": "Deine Spendenbescheinigungen erhältst du im Februar des nächsten Jahres.<br/>Solltest du diese früher benötigen, kannst du dich jederzeit unter <strong>spenden@vivaconagua.org</strong> melden.",
     "newsletter": {
       "text": "In der Zwischenzeit melde dich doch bei unserem Newsletter an",
