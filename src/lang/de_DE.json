@@ -46,8 +46,8 @@
     "payment": "Oh je, da ist leider ein Fehler passiert. Das tut uns leid. Wende dich bitte an kontakt@vivaconagua.org und gib diese Payment ID mit an"
   },
   "headline": {
-    "donate": "SPENDE JETZT FÜR SAUBERES TRINKWASSER",
-    "thanks": "DANKE FÜR DEINE SPENDE FÜR SAUBERES TRINKWASSER"
+    "donate": "UNTERSTÜTZE UNS JETZT FÜR SAUBERES TRINKWASSER",
+    "thanks": "DANKE FÜR DEINE UNTERSTÜTZUNG FÜR SAUBERES TRINKWASSER"
   },
   "header": {
     "amount": "Dein Betrag",
@@ -120,7 +120,7 @@
     }
   },
   "paymentselection": {
-    "label": "Ich spende via"
+    "label": "Ich zahle via"
   },
   "contacttypeselection": {
     "label": "Ich verschenke eine Fördermitgliedschaft ab als",
@@ -129,7 +129,7 @@
   },
   "contactform": {
     "label": "Deine persönlichen Angaben",
-    "additional": "Ich möchte eine Spendenquittung erhalten",
+    "additional": "Ich möchte eine Zuwendungsbescheinigung erhalten",
     "required": "* Diese Angaben benötigen wir von dir auf jeden Fall.",
     "company": {
       "placeholder": "Name des Unternehmens *",
@@ -138,7 +138,7 @@
     "email": {
       "placeholder": "E-Mail Adresse *",
       "error": "Bitte gib eine gültige E-Mail Adresse ein",
-      "info": "Dies ist kein Pflichtfeld, wir verschicken die Spendenbescheinigungen jedoch ressourcenschonend per E-Mail und fänden es super, wenn du uns deine E-Mail Adresse zur Verfügung stellst."
+      "info": "Dies ist kein Pflichtfeld, wir verschicken die Zuwendungsbescheinigung jedoch ressourcenschonend per E-Mail und fänden es super, wenn du uns deine E-Mail Adresse zur Verfügung stellst."
     },
     "firstname": {
       "placeholder": "Dein Vorname *",
@@ -169,7 +169,7 @@
       "error": "Bitte gib dein Land ein"
     },
     "selectCountry": {
-      "label": "Bitte wähle aus in welcher Währung du gerne Spenden möchtest",
+      "label": "Bitte wähle aus in welcher Währung du gerne zahlen möchtest",
       "placeholder": "Bitte Organisation auswählen",
       "de": {
         "title": "Viva con Agua de Sankt Pauli e.V.",
@@ -191,7 +191,7 @@
       "paypal": "Paypal"
     },
     "more_details": "Weitere Angaben",
-    "email": "Wir benötigen deine E-Mail Adresse an dieser Stelle, um die Spende bei diesem Zahlungsanbieter durführen zu können.",
+    "email": "Wir benötigen deine E-Mail Adresse an dieser Stelle, um die Zahlung bei diesem Zahlungsanbieter durführen zu können.",
     "sepa": {
       "placeholder": "DE00 0000 0000 0000 0000 00",
       "error": "Bitte prüfe deine IBAN"
@@ -205,10 +205,10 @@
         "error": "Bitte bestätige die Einzugsermächtigung"
       }
     },
-    "submit": "Jetzt {0} {1} spenden"
+    "submit": "Jetzt {0} {1} zahlen"
   },
   "policies": {
-    "label": "Mit deiner Spende bestätigst du, die {0} gelesen zu haben.",
+    "label": "Mit deiner Zahlung bestätigst du, die {0} gelesen zu haben.",
     "data": {
       "label": "Datenschutzerklärung",
       "url": "https://www.vivaconagua.org/datenschutzerklaerung"
@@ -226,7 +226,7 @@
       "yearly": "jährlich",
       "monthly": "monatlich"
     },
-    "text": "Deine Spende über {0} hat {1}",
+    "text": "Deine Zahlung über {0} hat {1}",
     "example": {
       "default": "unter anderem in unserem Projektland Uganda noch mehr Menschen den Zugang zu sauberem Trinkwasser ermöglicht",
       "soap": "unter anderem in unserem Projektland Uganda mindestens 20 l Seife für Schulen zur Verfügung gestellt.",
@@ -238,7 +238,7 @@
   "next": {
     "label": "So geht es weiter",
     "email": "Du erhältst gleich die Urkunde zur Fördermitgliedschaft von uns per E-Mail.",
-    "receipt": "Deine Spendenbescheinigungen erhältst du im Februar des nächsten Jahres.<br/>Solltest du diese früher benötigen, kannst du dich jederzeit unter <strong>spenden@vivaconagua.org</strong> melden.",
+    "receipt": "Deine Zuwendungsbescheinigung erhältst du im Februar des nächsten Jahres.<br/>Solltest du diese früher benötigen, kannst du dich jederzeit unter <strong>mitgliedschaft@vivaconagua.org</strong> melden.",
     "newsletter": {
       "text": "In der Zwischenzeit melde dich doch bei unserem Newsletter an",
       "button": "Jetzt anmelden",
