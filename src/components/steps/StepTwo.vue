@@ -33,7 +33,7 @@ export default {
         },
         submit() {
             this.gtmTrack("click", "StepTwo Next donation-form", 0)
-            this.$store.dispatch("payment/process").then(() => {
+            this.$store.dispatch("process").then(() => {
                 this.$emit("submit")
             })
             .catch((err) => console.log(err))

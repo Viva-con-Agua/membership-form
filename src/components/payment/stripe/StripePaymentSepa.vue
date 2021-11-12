@@ -63,7 +63,7 @@ export default {
         this.element.mount(this.$refs.element)
     },
     created() {
-        this.stripe = window.Stripe(process.env.VUE_APP_STRIPE_PUBLIC_KEY)
+        this.stripe = window.Stripe(this.company.stripe_public_key)
         this.elements = this.stripe.elements()
         this.element = this.elements.create('iban', this.options)
         this.element.on('change', (event) => { 
@@ -104,7 +104,8 @@ export default {
             }
         },
         ...mapGetters({
-            billing_details: 'payment/stripe/billing_details'
+            billing_details: 'payment/stripe/billing_details',
+            company: 'form/company'
         })    
     },
     watch: {

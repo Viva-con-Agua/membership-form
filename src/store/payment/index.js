@@ -34,6 +34,7 @@ const payment = {
         interval: "monthly",
         country: [],
         abo: false,
+        cycles: 12,
         donation_receipt: false
     },
     mutations: {
@@ -49,6 +50,9 @@ const payment = {
         },
         interval(state, val) {
             state.interval = val
+        },
+        cycles(state, val) {
+            state.cycles = val
         },
         payment_type(state, val) {
             state.payment_type = val
@@ -78,6 +82,9 @@ const payment = {
     getters: {
         money (state) {
             return state.money
+        },
+        cycles(state) {
+            return state.cycles
         },
         interval(state) {
             return state.interval

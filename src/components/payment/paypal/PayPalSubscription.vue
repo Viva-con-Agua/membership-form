@@ -2,15 +2,10 @@
     <div id="paypal-button" class="paypal-button"></div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 
 let ppActions;
 export default {
-    props: {
-        plan_id: {
-            type: String,
-            default: ""
-        }
-    },
     methods: {
         onApprove: function(data) {
             // This function captures the funds from the transaction.
@@ -20,7 +15,8 @@ export default {
         createSubscription: function(data, actions) {
             var that = this
             return actions.subscription.create({
-                'plan_id': that.plan_id
+                'plan_id': that.plan_id,
+                'start_time': that.start_time
             });
         },
         onCancel(data) {
@@ -51,8 +47,16 @@ export default {
             }
         }
     },
+    computed: {
+        ...mapGetters({
+            company: 'form/company',
+            plan_id: 'payment/paypal/plan_id',
+            start_time: 'payment/paypal/start_time'
+        })
+    },
     mounted() {
-        var paypalLink = 'https://www.paypal.com/sdk/js?client-id='+process.env.VUE_APP_PAYPAL_CLIENT_ID +'&vault=true&disable-funding=credit,card,sepa,giropay,sofort&currency=EUR&intent=subscription'
+        console.log("mounted2")
+        var paypalLink = 'https://www.paypal.com/sdk/js?client-id='+ this.company.paypal_client_id +'&vault=true&disable-funding=credit,card,sepa,giropay,sofort&currency=EUR&intent=subscription'
         let paypalScript = document.createElement('script')
         paypalScript.setAttribute('src', paypalLink)
         document.head.appendChild(paypalScript)

@@ -1,6 +1,7 @@
 <template>
     <div class="stepone">
         
+        <Expiration />
         <Interval />
         <AmountButtons />
         <Amount ref="amount" />
@@ -13,10 +14,11 @@
 <script>
 import Amount from '@/components/steps/one/Amount.vue'
 import Interval from '@/components/steps/one/Interval.vue'
+import Expiration from '@/components/steps/one/Expiration.vue'
 import AmountButtons from '@/components/steps/one/AmountButtons.vue'
 export default {
     name: 'StepOne',
-    components: {Amount, Interval, AmountButtons},
+    components: {Amount, Expiration, Interval, AmountButtons},
     data() {
         return {
             isValid: true,

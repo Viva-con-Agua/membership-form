@@ -25,8 +25,8 @@ export default {
     components: {StripeSubscriptionSepa, CiviSubsciptionSEPA, StripeSubscriptionCreditCard, PayPalButton},
     props: ['product'],
     computed: {
-       ...mapGetters({
-           paymentTypes: 'form/subscriptionTypes'
+        ...mapGetters({
+            paymentTypes: 'form/subscriptionTypes'
         }),
         paymentType: {
             get () {
@@ -61,11 +61,17 @@ export default {
         },
         commit() {
             if (this.getPaymentType("creditcard")) {
-                this.$refs.creditcard.purchase()
+                if (typeof this.$refs.creditcard !== 'undefined' && this.$refs.creditcard !== null) {
+                    this.$refs.creditcard.purchase()
+                }
             } else if (this.getPaymentType("paypal")){
-                this.$refs.paypal.purchase()
+                if (typeof this.$refs.paypal !== 'undefined' && this.$refs.paypal !== null) {
+                    this.$refs.paypal.purchase()
+                }
             } else if (this.getPaymentType("sepa")){
-                this.$refs.sepa.purchase()
+                if (typeof this.$refs.sepa !== 'undefined' && this.$refs.sepa !== null) {
+                    this.$refs.sepa.purchase()
+                }
             }
         }
     },

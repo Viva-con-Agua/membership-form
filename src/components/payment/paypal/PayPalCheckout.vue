@@ -4,6 +4,7 @@
 <script>
 import defaultProps from './js/util/defaultProps';
 import additionalProps from './js/util/additionalProps';
+import { mapGetters } from 'vuex'
 
 let ppActions;
 
@@ -59,8 +60,13 @@ export default {
             }
         }
     },
+    computed: {
+        ...mapGetters({
+            company: 'form/company'
+        })
+    },
     mounted() {
-        var paypalLink = 'https://www.paypal.com/sdk/js?client-id='+process.env.VUE_APP_PAYPAL_CLIENT_ID +'&vault=true&disable-funding=credit,card,sepa,giropay,sofort&currency=EUR'
+        var paypalLink = 'https://www.paypal.com/sdk/js?client-id='+ this.company.paypal_client_id +'&vault=true&disable-funding=credit,card,sepa,giropay,sofort&currency=EUR'
         let paypalScript = document.createElement('script')
         paypalScript.setAttribute('src', paypalLink)
         document.head.appendChild(paypalScript)

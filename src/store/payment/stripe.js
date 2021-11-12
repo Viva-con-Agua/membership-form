@@ -71,6 +71,7 @@ const stripe = {
                 terms: state.terms,
                 interval: rootState.payment.interval,
                 product_id: rootState.form.current.product.stripe_id
+
             }
             return new Promise((resolve, reject) => {
                 api.call.post('/v1/donations/payment/stripe/setupintent', data)
@@ -83,6 +84,8 @@ const stripe = {
         setup_intent_finish({rootState,state}) {
             var data = {
                 payment_id: rootState.payment.payment_id,
+                payment_method: state.payment_method,
+                cycles: rootState.payment.cycles,
                 status: state.status
             }
             return new Promise((resolve, reject) => {

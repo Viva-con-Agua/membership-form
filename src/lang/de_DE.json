@@ -46,8 +46,8 @@
     "payment": "Oh je, da ist leider ein Fehler passiert. Das tut uns leid. Wende dich bitte an kontakt@vivaconagua.org und gib diese Payment ID mit an"
   },
   "headline": {
-    "donate": "SPENDE JETZT FÜR SAUBERES TRINKWASSER",
-    "thanks": "DANKE FÜR DEINE SPENDE FÜR SAUBERES TRINKWASSER"
+    "donate": "UNTERSTÜTZE UNS JETZT FÜR SAUBERES TRINKWASSER",
+    "thanks": "DANKE FÜR DEINE UNTERSTÜTZUNG FÜR SAUBERES TRINKWASSER"
   },
   "header": {
     "amount": "Dein Betrag",
@@ -58,8 +58,8 @@
   "information": {
     "label": "Hinweise:",
     "info_1": "Die Fördermitgliedschaft kann jederzeit gekündigt werden.",
-    "info_2": "Deine Fördermitgliedschaft ist steuerlich absetzbar. Eine Zuwendungsbescheinigung erhältst du im Februar des Folgejahres.",
-    "info_3": "Viva con Agua nutzt deine Daten ausschließlich zur Verwaltung deiner Fördermitgliedschaft. Wir geben sie nicht an Dritte weiter.",
+    "info_2": "Die Fördermitgliedschaft ist steuerlich absetzbar. Eine Zuwendungsbescheinigung erhältst du im Februar des Folgejahres.",
+    "info_3": "Viva con Agua nutzt deine Daten ausschließlich zur Verwaltung der Fördermitgliedschaft. Wir geben sie nicht an Dritte weiter.",
     "info_4": "Viva con Agua de Sankt Pauli e.V. ist vom Finanzamt Hamburg-Nord als gemeinnützig anerkannt. Steuernummer: 17/454/04711. Letzter Bescheid vom 21.09.2020"
   },
   "buttons": {
@@ -82,12 +82,18 @@
     }
   },
   "interval": {
-    "label": "Wähle dein Interval",
+    "label": "Wähle das Beitragsintervall",
     "monthly": "Monatsbeitrag",
     "yearly": "Jahresbeitrag"
   },
+  "expiration": {
+    "label": "Wähle die Laufzeit",
+    "infobox": "Natürlich kannst auch diese Fördermitgliedschaft jederzeit beenden.",
+    "year": "1 Jahr",
+    "never": "Ohne Enddatum"
+  },
   "amounts": {
-    "label": "Wähle deinen Mitgliedsbeitrag",
+    "label": "Wähle den Mitgliedsbeitrag",
     "500": {
       "title": "5 {0}",
       "subtitle": "TROPFEN Fördermitglied"
@@ -114,16 +120,16 @@
     }
   },
   "paymentselection": {
-    "label": "Ich spende via"
+    "label": "Ich zahle via"
   },
   "contacttypeselection": {
-    "label": "Ich schließe eine Fördermitgliedschaft ab als",
+    "label": "Ich verschenke eine Fördermitgliedschaft ab als",
     "individual": "Privatperson",
     "company": "Unternehmen"
   },
   "contactform": {
-    "label": "Persönliche Angaben",
-    "additional": "Ich möchte eine Spendenquittung erhalten",
+    "label": "Deine persönlichen Angaben",
+    "additional": "Ich möchte eine Zuwendungsbescheinigung erhalten",
     "required": "* Diese Angaben benötigen wir von dir auf jeden Fall.",
     "company": {
       "placeholder": "Name des Unternehmens *",
@@ -132,7 +138,7 @@
     "email": {
       "placeholder": "E-Mail Adresse *",
       "error": "Bitte gib eine gültige E-Mail Adresse ein",
-      "info": "Dies ist kein Pflichtfeld, wir verschicken die Spendenbescheinigungen jedoch ressourcenschonend per E-Mail und fänden es super, wenn du uns deine E-Mail Adresse zur Verfügung stellst."
+      "info": "Dies ist kein Pflichtfeld, wir verschicken die Zuwendungsbescheinigung jedoch ressourcenschonend per E-Mail und fänden es super, wenn du uns deine E-Mail Adresse zur Verfügung stellst."
     },
     "firstname": {
       "placeholder": "Dein Vorname *",
@@ -163,7 +169,7 @@
       "error": "Bitte gib dein Land ein"
     },
     "selectCountry": {
-      "label": "Bitte wähle aus in welcher Währung du gerne Spenden möchtest",
+      "label": "Bitte wähle aus in welcher Währung du gerne zahlen möchtest",
       "placeholder": "Bitte Organisation auswählen",
       "de": {
         "title": "Viva con Agua de Sankt Pauli e.V.",
@@ -179,12 +185,13 @@
   },
   "payment": {
     "type": {
+      "civisepa": "SEPA Lastschrift",
       "sepa": "SEPA",
       "creditcard": "Kreditkarte",
       "paypal": "Paypal"
     },
     "more_details": "Weitere Angaben",
-    "email": "Wir benötigen deine E-Mail Adresse an dieser Stelle, um die Spende bei diesem Zahlungsanbieter durführen zu können.",
+    "email": "Wir benötigen deine E-Mail Adresse an dieser Stelle, um die Zahlung bei diesem Zahlungsanbieter durführen zu können.",
     "sepa": {
       "placeholder": "DE00 0000 0000 0000 0000 00",
       "error": "Bitte prüfe deine IBAN"
@@ -198,10 +205,10 @@
         "error": "Bitte bestätige die Einzugsermächtigung"
       }
     },
-    "submit": "Jetzt {0} {1} spenden"
+    "submit": "Jetzt {0} {1} zahlen"
   },
   "policies": {
-    "label": "Mit deiner Spende bestätigst du, die {0} gelesen zu haben.",
+    "label": "Mit deiner Zahlung bestätigst du, die {0} gelesen zu haben.",
     "data": {
       "label": "Datenschutzerklärung",
       "url": "https://www.vivaconagua.org/datenschutzerklaerung"
@@ -219,7 +226,7 @@
       "yearly": "jährlich",
       "monthly": "monatlich"
     },
-    "text": "Deine Spende über {0} hat {1}",
+    "text": "Deine Zahlung über {0} hat {1}",
     "example": {
       "default": "unter anderem in unserem Projektland Uganda noch mehr Menschen den Zugang zu sauberem Trinkwasser ermöglicht",
       "soap": "unter anderem in unserem Projektland Uganda mindestens 20 l Seife für Schulen zur Verfügung gestellt.",
@@ -230,8 +237,8 @@
   },
   "next": {
     "label": "So geht es weiter",
-    "email": "Du erhältst gleich eine Bestätigungsmail von uns.",
-    "receipt": "Deine Spendenbescheinigungen erhältst du im Februar des nächsten Jahres.<br/>Solltest du diese früher benötigen, kannst du dich jederzeit unter <strong>spenden@vivaconagua.org</strong> melden.",
+    "email": "Du erhältst gleich die Urkunde zur Fördermitgliedschaft von uns per E-Mail.",
+    "receipt": "Deine Zuwendungsbescheinigung erhältst du im Februar des nächsten Jahres.<br/>Solltest du diese früher benötigen, kannst du dich jederzeit unter <strong>mitgliedschaft@vivaconagua.org</strong> melden.",
     "newsletter": {
       "text": "In der Zwischenzeit melde dich doch bei unserem Newsletter an",
       "button": "Jetzt anmelden",
