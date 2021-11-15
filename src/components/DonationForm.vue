@@ -11,7 +11,7 @@
             <StepThanks v-if="step === 4"/>
         </div>
         <PaymentFooter v-if="step < 4" />
-        <ThanksFooter />
+        <!--ThanksFooter /-->
     </div>
 </template>
 <script>
@@ -20,7 +20,7 @@ import StepOne from '@/components/steps/StepOne'
 import StepTwo from '@/components/steps/StepTwo'
 import StepThree from '@/components/steps/StepThree'
 import StepThanks from '@/components/steps/StepThanks'
-import ThanksFooter from '@/components/utils/ThanksFooter'
+//import ThanksFooter from '@/components/utils/ThanksFooter'
 import Slider from '@/components/steps/four/Slider'
 import PaymentFooter from '@/components/layout/Footer'
 import HeaderSteps from '@/components/layout/HeaderSteps'
@@ -29,7 +29,7 @@ import Headline from '@/components/layout/Headline'
 import { mapGetters } from 'vuex'
 export default {
     name: 'DonationForm',
-    components: {Slider, StepOne, StepTwo, StepThree, StepThanks, PaymentFooter, HeaderSteps, Headline, ThanksFooter },
+    components: {Slider, StepOne, StepTwo, StepThree, StepThanks, PaymentFooter, HeaderSteps, Headline/*, ThanksFooter */ },
     props: {
         donation_form_id: {
             type: String,
