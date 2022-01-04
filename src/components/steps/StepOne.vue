@@ -1,7 +1,7 @@
 <template>
     <div class="stepone">
         
-        <Expiration />
+        <Expiration v-if="setting == 'gift'"/>
         <Interval />
         <AmountButtons />
         <Amount ref="amount" />
@@ -16,12 +16,14 @@ import Amount from '@/components/steps/one/Amount.vue'
 import Interval from '@/components/steps/one/Interval.vue'
 import Expiration from '@/components/steps/one/Expiration.vue'
 import AmountButtons from '@/components/steps/one/AmountButtons.vue'
+import { mapGetters } from 'vuex'
+
 export default {
     name: 'StepOne',
     components: {Amount, Expiration, Interval, AmountButtons},
     data() {
         return {
-            isValid: true,
+            isValid: true
         }
     },
     mounted () {
@@ -34,6 +36,9 @@ export default {
                    )
     },
     computed: {
+        ...mapGetters({
+            setting: 'form/setting'
+        }),
         hasSubscription() {
             return this.$store.state.form.current.subscription_types != null
         }

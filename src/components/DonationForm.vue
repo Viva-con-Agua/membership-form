@@ -34,10 +34,14 @@ export default {
         donation_form_id: {
             type: String,
             default: ""
+        },
+        setting: {
+            type: String,
+            default: ""
         }
     },
     created() {
-        this.$store.dispatch({type: 'init', data: this.donation_form_id})
+        this.$store.dispatch({type: 'init', data: {form_id: this.donation_form_id, setting: this.setting}})
             .then(resp => console.log(resp))
             .catch(error => console.log(error))
     },
