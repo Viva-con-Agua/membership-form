@@ -123,7 +123,8 @@
     "label": "Ich zahle via"
   },
   "contacttypeselection": {
-    "label": "Ich verschenke eine Fördermitgliedschaft ab als",
+    "label": "Ich schließe eine Fördermitgliedschaft ab als",
+    "label_gift": "Ich verschenke eine Fördermitgliedschaft ab als",
     "individual": "Privatperson",
     "company": "Unternehmen"
   },

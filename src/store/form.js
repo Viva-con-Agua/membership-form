@@ -7,6 +7,7 @@ const form = {
         payment: payment
     },
     state: () => ({
+        setting: "",
         current: {
             product: null,
             type: "member",
@@ -40,11 +41,17 @@ const form = {
         },
         company(state) {
             return state.current.company
+        },
+        setting(state) {
+            return state.setting
         }
     },
     mutations: {
         get(state, value) {
             state.current = value
+        },
+        setting(state, value) {
+            state.setting = value
         }
     },
     actions: {

@@ -11,7 +11,7 @@ const routes = [
     {
         path: '*',
         component: loadView('DonationForm'),
-        props: route => ({ donation_form_id: route.query.donation_form_id })
+        props: route => ({ donation_form_id: route.query.donation_form_id, setting: route.query.setting })
     }
 ]
 

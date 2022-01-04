@@ -66,8 +66,9 @@ export default new Vuex.Store({
         }
     },
     actions: {
-        async init({dispatch}, data) {
-            await dispatch({type: 'form/get', data: data.data})
+        async init({commit, dispatch}, data) {
+            commit('form/setting', data.data.setting)
+            await dispatch({type: 'form/get', data: data.data.form_id})
         },
         async process({dispatch}) {
                 await dispatch("payment/process").catch((error) => {console.log(error)})
