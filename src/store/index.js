@@ -67,7 +67,6 @@ export default new Vuex.Store({
     },
     actions: {
         async init({commit, dispatch}, data) {
-            console.log(data.data)
             commit('form/setting', data.data.setting)
             await dispatch({type: 'form/get', data: data.data.form_id})
         },
