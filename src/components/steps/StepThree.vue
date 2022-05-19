@@ -31,7 +31,8 @@ export default {
             payment: 'payment/payment_id',
             money: 'payment/money',
             interval: 'payment/interval',
-            paymentType: 'payment/payment_type'
+            paymentType: 'payment/payment_type',
+            cycles: 'payment/cycles'
         }),
         getLabel() {
             return this.$t('payment.submit', {0: Money.convertDE(this.money.amount), 1: this.money.currency})
@@ -57,10 +58,11 @@ export default {
         },
         commit() {
             this.$store.commit('loadingFlow')
-            this.gtmTrack("click", "StepTree Donate donation-form", this.money.amount/100)
+            this.tracker("donate", "StepThree", this.money.amount/100, this.interval, this.cycles)
             this.$refs.selection.commit()
         },
         back() {
+            this.tracker("prev", "StepThree", 0, 0, 0)
             this.$emit("back")
         }
     }
