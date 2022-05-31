@@ -61,10 +61,10 @@ export default {
             var value = 0
             if (this.interval == "monthly") {
                 value = (this.money.amount * 12) / 100
-                this.tracker("subscribe", "StepThree-Supscription-Montly", value)
+                this.tracker("subscribe", "StepThree-Subscription-Montly", value)
             } else {
                 value = this.money.amount/100
-                this.tracker("subscribe", "StepThree-Supscription-Yearly", value)
+                this.tracker("subscribe", "StepThree-Subscription-Yearly", value)
             }
             this.$refs.selection.commit()
         },
