@@ -29,10 +29,11 @@ export default {
     },
     methods: {
         back() {
+            this.tracker("prev", "StepTwo-Prev", 0)
             this.$emit("back")
         },
         submit() {
-            this.gtmTrack("click", "StepTwo Next donation-form", 0)
+            this.tracker("next", "StepTwo-Next", 0)
             this.$store.dispatch("process").then(() => {
                 this.$emit("submit")
             })

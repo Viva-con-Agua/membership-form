@@ -38,37 +38,37 @@ const i18n = new VueI18n({
     }
 });
 Vue.mixin({
-  methods: {
-    notification: function (msg) {
-        if (msg !== undefined) {
-            this.$notify({
-                title: this.$t(msg.title),
-                text: this.$t(msg.body),
-                type: msg.type,
-                duration: 6000
-            });
-        }
-    },
-    toLocaleString: function (str) {
-        return str.toLocaleString(this.$i18n.locale)
-    },
-    formatDate(val) {
-        var options = { year: 'numeric', month: 'long', day: 'numeric' };
-        return new Date(val * 1000).toLocaleDateString(this.$i18n.locale, options)
-    },
-    gtmTrack (action, label, value) {
-    window.top.postMessage({
-        event: "gtm-trigger",
-        data: {
-            event: "gtm-trigger-" + action, 
-            target: "DonationForm",
-            action: action,
-            label: label,
-            value: value
+    methods: {
+        notification: function (msg) {
+            if (msg !== undefined) {
+                this.$notify({
+                    title: this.$t(msg.title),
+                    text: this.$t(msg.body),
+                    type: msg.type,
+                    duration: 6000
+                });
             }
-        }, "*")
+        },
+        toLocaleString: function (str) {
+            return str.toLocaleString(this.$i18n.locale)
+        },
+        formatDate(val) {
+            var options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(val * 1000).toLocaleDateString(this.$i18n.locale, options)
+        },
+        tracker (action, name, value) {
+            window.top.postMessage({
+                event: "tracking-trigger",
+                data: {
+                    event: "trigger-membership-form", 
+                    category: "MembershipForm",
+                    action: action,
+                    name: name,
+                    value: value
+                }
+            }, "*")
+        }
     }
-  }
 })
 
 //const CustomElement = wrap(Vue, App);
