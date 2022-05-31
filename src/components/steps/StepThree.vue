@@ -61,15 +61,15 @@ export default {
             var value = 0
             if (this.interval == "monthly") {
                 value = (this.money.amount * 12) / 100
-                this.tracker("donate", "StepDonation-Montly", value)
+                this.tracker("donate", "StepThree-Donation-Montly", value)
             } else {
                 value = this.money.amount/100
-                this.tracker("donate", "StepDonation-Yearly", value)
+                this.tracker("donate", "StepThree-Donation-Yearly", value)
             }
             this.$refs.selection.commit()
         },
         back() {
-            this.tracker("prev", "StepThree", 0, 0, 0)
+            this.tracker("prev", "StepThree-Prev", 0)
             this.$emit("back")
         }
     }

@@ -46,7 +46,7 @@ export default {
     },
     methods: {
         submit() {
-            this.tracker("newsletter", "StepFour_Newsletter", 0)
+            this.tracker("newsletter", "StepFour-Newsletter", 0)
             this.$store.dispatch({type: 'newsletter'})
             .then((resp) => {
                 console.log(resp)
