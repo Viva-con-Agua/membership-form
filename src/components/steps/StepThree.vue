@@ -58,7 +58,14 @@ export default {
         },
         commit() {
             this.$store.commit('loadingFlow')
-            this.tracker("donate", "StepThree", this.money.amount/100, this.interval, this.cycles)
+            var value = 0
+            if (this.interval == "monthly") {
+                value = (this.money.amount * 12) / 100
+                this.tracker("donate", "StepDonation-Montly", value)
+            } else {
+                value = this.money.amount/100
+                this.tracker("donate", "StepDonation-Yearly", value)
+            }
             this.$refs.selection.commit()
         },
         back() {

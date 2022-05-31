@@ -56,17 +56,15 @@ Vue.mixin({
             var options = { year: 'numeric', month: 'long', day: 'numeric' };
             return new Date(val * 1000).toLocaleDateString(this.$i18n.locale, options)
         },
-        tracker (action, name, value, iteration, cycles) {
+        tracker (action, name, value) {
             window.top.postMessage({
                 event: "tracking-trigger",
                 data: {
-                    event: "trigger-membership", 
+                    event: "trigger-membership-" + action, 
                     category: "MembershipForm",
                     action: action,
                     name: name,
-                    value: value,
-                    iteration: iteration,
-                    cycles: cycles
+                    value: value
                 }
             }, "*")
         }

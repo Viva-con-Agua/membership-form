@@ -45,7 +45,7 @@ export default {
     },
     methods: {
         submit() {
-            this.tracker("next", "StepOne", 0, 0, 0)
+            this.tracker("next", "StepOne", 0)
             this.$emit("submit")
         }
     },
