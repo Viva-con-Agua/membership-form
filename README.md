@@ -8,6 +8,7 @@ Sepa, CreditCard, Paypal
 ## Tracking
 
 ### Datalayer
+```
 {
     "event": "trigger-membership-form",
     "category": "MembershipForm",
@@ -16,6 +17,7 @@ Sepa, CreditCard, Paypal
     "value": value
     ""
 }
+```
 
 ### Actions: 
 
