@@ -7,7 +7,7 @@ Sepa, CreditCard, Paypal
 
 ## Tracking
 
-### Datalayer
+### Payload
 ```
 {
     "event": "trigger-membership-form",
