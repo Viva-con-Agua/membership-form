@@ -1,43 +1,42 @@
-# base-frontend
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 # membership-form
+Webform for concluding a supporting membership.
+
+## Supported Payments
+
+Sepa, CreditCard, Paypal
 
 ## Tracking
 
+### Payload
 ```
 {
-    event: "trigger-membership",
-    data: {
-        event: "trigger-membership-" + action, 
-        target: "MembershipForm",
-        action: action, //next, prev, contact-us, donate, newsletter 
-        label: label,  //StepOne, StepTwo, StepDonate, StepThanks
-        // ab hier nur bei action donation angegeben
-        value: value, //amount yearly
-        iteration: monthly, yearly
-        iteration_end: 0, 1, 2 ... // in Jahren. Bei 0 wurde keine Laufzeit angegeben.
-    }
+    "event": "trigger-membership-form",
+    "category": "MembershipForm",
+    "action": action,
+    "name": name,
+    "value": value
 }
 ```
+
+### Actions: 
+
+| action | description |
+| --- | --- |
+| next | move to next Step |
+| prev | move to prev Step |
+| subscribe | subscribe an supporting membership |
+| newsletter | subscribe newsletter |
+| contact_us | contact us with feedback |
+
+### Names Action Value
+
+| name | action | value |
+| --- | --- | --- |
+| StepOne-Next | next | 0 |
+| StepTwo-Next | prev | 0 |
+| StepTwo-Prev | prev | 0 |
+| StepThree-Prev | prev | 0 |
+| StepThree-Subscription-Montly | subscribe | amount_year |
+| StepThree-Subscription-Yearly | subscribe | amount_year |
+| StepFour-Newsletter | newsletter | 0 |
+| StepFour-Contact-Us | contact-us | 0 |
