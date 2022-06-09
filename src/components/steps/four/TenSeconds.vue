@@ -73,7 +73,7 @@ export default {
     },
     methods: {
         submit() {
-            this.tracker("contact_us", "StepFour", 0, 0, 0)
+            this.tracker("contact_us", "StepFour-Contact-Us", 0)
             this.$refs.comment.validate()
 
             if(this.$v.$invalid) {
