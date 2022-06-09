@@ -15,7 +15,6 @@ Sepa, CreditCard, Paypal
     "action": action,
     "name": name,
     "value": value
-    ""
 }
 ```
 
