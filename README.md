@@ -19,13 +19,13 @@ Sepa, CreditCard, Paypal
 
 ### Actions: 
 
- ```
-    next        -- move to next Step 
-    prev        -- move to prev Step
-    subscribe   -- subscribe an supporting membership
-    newsletter  -- subscribe newsletter
-    contact_us  -- contact us with feedback
-```
+| action | description |
+| --- | --- |
+| next | move to next Step |
+| prev | move to prev Step |
+| subscribe | subscribe an supporting membership |
+| newsletter | subscribe newsletter |
+| contact_us | contact us with feedback |
 
 ### Names Action Value
 
