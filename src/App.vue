@@ -1,10 +1,10 @@
 <template>
-  <div id="app">
-    <notifications position="top center" width="100%"/>
-    <div id="payment-widget" class="payment-widget">
-   <router-view class="app-content"/>
+    <div id="app">
+        <notifications position="top center" width="100%"/>
+        <div id="payment-widget" class="payment-widget" ref="paymentwidget" @click="interaction">
+            <router-view class="app-content"/>
+        </div>
     </div>
-</div>
 </template>
 <script>
 //import VueI18n from 'vue-i18n'
@@ -39,8 +39,31 @@ export default {
     methods: {
         success(e) {
             console.log(e)
-        }
-    }
+        },
+        interaction() {
+            const contentHeight = this.$refs.paymentwidget.clientHeight;
+            const message = {
+                type: 'iframe-height',
+                data: {
+                    height: contentHeight,
+                },
+            };
+            parent.postMessage(message, '*');
+            console.log('message sent with: ', contentHeight);
+        },
+    },
+    mounted() {
+        window.addEventListener(
+            'message',
+            (event) => {
+                if (event.data.type === 'iframe-loaded') {
+                    console.log('iframe loaded event received');
+                    this.interaction();
+                }
+            },
+            false,
+        );
+    },
 
 }
 </script>
