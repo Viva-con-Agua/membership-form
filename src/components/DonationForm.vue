@@ -38,11 +38,32 @@ export default {
         setting: {
             type: String,
             default: ""
+        },
+        amount: {
+            type: String,
+            default: ""
+        },
+        interval: {
+            type: String,
+            default: ""
         }
     },
     created() {
         this.$store.dispatch({type: 'init', data: {form_id: this.donation_form_id, setting: this.setting}})
-            .then(resp => console.log(resp))
+            .then(() => {
+                let next = 0
+                if (this.amount && this.amount >= this.minAmount) {
+                    this.$store.commit('payment/money', {amount: this.amount})
+                    next++
+                }
+                if(this.interval && ['monthly', 'yearly'].includes(this.interval)) {
+                    this.$store.commit('payment/interval', this.interval)
+                    next++
+                }
+                if (next == 2) {
+                    this.step = 2
+                }
+            })
             .catch(error => console.log(error))
     },
     data() {
@@ -60,6 +81,7 @@ export default {
     computed: {
         ...mapGetters({
             product: 'form/product',
+            minAmount: 'form/minAmount',
             loadingFlow: 'loadingFlow'
         }),
         getText() {
