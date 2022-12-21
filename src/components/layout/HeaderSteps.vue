@@ -1,48 +1,59 @@
 <template>
-        <div class="steps">
-            <ul>
-                <li v-for="step in steps" :key="step.id" 
-                    :class="{
-                         'is-active': step.id == currentStep, 
-                         'is-inactive': step.id != currentStep, 
-                         'last-step': step.id == steps.length, 
-                         'first-step': step.id == 1,
-                         'behind': step.id > currentStep
-                 }">
-                    <div class="step-content">
-                        <div class="step-id"><div>{{ step.id }}.</div></div>
-                        <div class="step-label"><div>{{ step.label }}</div></div>
+    <div class="steps">
+        <ul>
+            <li
+                v-for="(step, index) in steps"
+                :key="step.id"
+                :class="{
+                    'is-active': step.id == currentStep,
+                    'is-inactive': step.id != currentStep,
+                    'last-step': step.id == steps.length,
+                    'first-step': step.id == 1,
+                    behind: step.id > currentStep,
+                }"
+            >
+                <div class="step-content">
+                    <div
+                        class="step-id"
+                        :class="{ last: index == steps.length - 1 }"
+                    >
+                        <div>{{ step.id }}.</div>
                     </div>
-                    <div v-if="step.id != currentStep" class="step-background"></div>
-                </li>
-            </ul>
-        </div>
+                    <div class="step-label">
+                        <div>{{ step.label }}</div>
+                    </div>
+                </div>
+                <div
+                    v-if="step.id != currentStep"
+                    class="step-background"
+                ></div>
+            </li>
+        </ul>
+    </div>
 </template>
 <script>
-
 export default {
-    name: 'HeaderSteps',
+    name: "HeaderSteps",
     props: {
         steps: {
             type: Array,
             default() {
                 return [
                     {
-                        id: '1',
-                        label: ''
-                    }
-                ]
-            }
+                        id: "1",
+                        label: "",
+                    },
+                ];
+            },
         },
         currentStep: {
             type: Number,
-            default: 1
-        }
-    }
-}
+            default: 1,
+        },
+    },
+};
 </script>
 <style type="text/css">
-
 .first-step {
     margin-left: 0px;
 }
@@ -61,7 +72,12 @@ export default {
 }
 
 .step-background {
-    background-image: linear-gradient(to bottom, #008fc3 0%, #008fc3 51%, transparent 51%);
+    background-image: linear-gradient(
+        to bottom,
+        #008fc3 0%,
+        #008fc3 51%,
+        transparent 51%
+    );
     background-size: 95% 1px;
     background-repeat: no-repeat;
     background-position: center 42%;
@@ -120,7 +136,6 @@ export default {
     position: relative;
 }
 
-
 .steps li.is-active div.step-content div.step-id,
 .steps li.is-active div.step-content div.step-label {
     display: table;
@@ -133,12 +148,12 @@ export default {
     font-weight: bold;
     font-size: 2.2vw;
     text-align: center;
-    
+
     background-image: url("~@/assets/icons/drop_white.png");
     background-size: contain;
-    background-position: center; 
+    background-position: center;
     background-repeat: no-repeat;
-    
+
     left: 0;
     width: 30%;
 }
@@ -148,7 +163,7 @@ export default {
     font-size: 1.6vw;
     text-align: left;
     white-space: break-spaces;
-    
+
     display: table;
     position: absolute;
     right: 0;
@@ -161,6 +176,12 @@ export default {
     vertical-align: middle;
     display: table-cell;
     padding-top: 5px;
+}
+.steps li.is-active div.step-content div.step-id.last div {
+    visibility: hidden;
+}
+.steps li.is-active div.step-content div.step-id.last {
+    background-image: url("~@/assets/icons/drop_heart.png");
 }
 
 .steps li.is-active div.step-content div.step-id div {
@@ -196,7 +217,7 @@ export default {
 }
 
 .steps li.is-inactive div.step-content div.step-label {
-    color: #008fc3; 
+    color: #008fc3;
     display: table-row;
 }
 
@@ -204,7 +225,7 @@ export default {
     color: white;
     background-image: url("~@/assets/icons/drop.png");
     background-size: contain;
-    background-position: center center; 
+    background-position: center center;
     background-repeat: no-repeat;
     font-size: 1.1em;
 
@@ -213,6 +234,13 @@ export default {
     height: 40px;
 }
 
+.steps li.is-inactive div.step-content div.step-id.last div {
+    visibility: hidden;
+}
+
+.steps li.is-inactive div.step-content div.step-id.last {
+    background-image: url("~@/assets/icons/drop_heart.png");
+}
 .steps li.is-inactive div.step-content div.step-id div {
     padding-top: 10px;
     padding-left: 1px;
@@ -228,7 +256,6 @@ export default {
 **********************/
 
 @media only screen and (max-width: 1000px) {
-
     .steps li.is-inactive div.step-content div.step-label {
         font-size: 1.3vw;
         white-space: normal;
@@ -241,7 +268,6 @@ export default {
     .steps li.is-inactive div.step-content div.step-id div {
         padding-top: 12px;
     }
-
 }
 
 /*********************
@@ -249,7 +275,6 @@ export default {
 **********************/
 
 @media only screen and (max-width: 800px) {
-
     .step-background {
         width: 40%;
     }
@@ -277,8 +302,6 @@ export default {
     .steps li.is-active div.step-content div.step-label div {
         word-wrap: anywhere;
     }
-
-
 }
 
 /*********************
@@ -286,13 +309,12 @@ export default {
 **********************/
 
 @media only screen and (max-width: 700px) {
-
     .step-background {
         width: 35%;
     }
 
     .steps li.is-active div.step-content div.step-label {
-        font-size: .7em;
+        font-size: 0.7em;
         font-weight: bold;
     }
 
@@ -305,13 +327,12 @@ export default {
     }
 
     .steps li.is-inactive div.step-content div.step-label {
-        font-size: .6em;
+        font-size: 0.6em;
     }
 
     .steps li.is-inactive div.step-content div.step-id {
-        font-size: .9em;
+        font-size: 0.9em;
     }
-
 }
 
 /*********************
@@ -319,7 +340,6 @@ export default {
 **********************/
 
 @media only screen and (max-width: 600px) {
-
     .step-background {
         display: none;
     }
@@ -362,7 +382,5 @@ export default {
         vertical-align: middle;
         padding-top: 5px !important;
     }
-
 }
-
 </style>
