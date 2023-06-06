@@ -1,0 +1,32 @@
+name: container_image
+on:
+    push:
+        branches:
+            - develop
+            - stage
+            - main
+
+jobs:
+    branch_name:
+        runs-on: ubuntu-latest
+        outputs:
+            branch_name: ${{steps.extract_branch_name.outputs.branch_name}}
+        steps:
+            # extract branch name
+            - name: extract branch name
+              id: extract_branch_name
+              shell: bash
+              run: echo "::set-output name=branch_name::$(echo ${GITHUB_REF#refs/heads/})"
+
+    build-container:
+        needs: [branch_name]
+        uses: Viva-con-Agua/workflows/.github/workflows/build_image.yml@main
+        with:
+            build_target: ${{ needs.branch_name.outputs.branch_name }}
+    deploy:
+        needs: [build-container]
+        uses: Viva-con-Agua/workflows/.github/workflows/deploy.yml@main
+        secrets: inherit
+        with:
+            image_name: ${{ needs.build-container.outputs.image_name }}
+            new_digest: ${{ needs.build-container.outputs.image_digest }}

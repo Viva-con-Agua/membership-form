@@ -119,7 +119,7 @@ export default {
     font-weight: bold;
 }
 
-/* 
+/*
     ACTIVE STEP
 */
 .steps li.is-active {

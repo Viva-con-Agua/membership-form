@@ -18,7 +18,7 @@ Sepa, CreditCard, Paypal
 }
 ```
 
-### Actions: 
+### Actions:
 
 | action | description |
 | --- | --- |

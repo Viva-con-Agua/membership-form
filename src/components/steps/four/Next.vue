@@ -13,12 +13,12 @@
             <p class="text-center">{{ $t('next.yours') }}</p>
         </vca-field>
     </vca-card>
- </template> 
+ </template>
 
 <script>
 import { required, email} from 'vuelidate/lib/validators'
 export default {
-    name: 'Next',    
+    name: 'Next',
     data() {
         return {
             flow: true

@@ -26,7 +26,7 @@
             </div>
         </vca-field>
     </vca-card>
- </template> 
+ </template>
 <script>
 import { required } from 'vuelidate/lib/validators'
 export default {
@@ -87,7 +87,7 @@ export default {
             .catch((error) => {
                 console.log(error)
             })
-            
+
             this.$store.dispatch({type: 'contact'})
             .then((resp) => {
                 this.flow = false
@@ -104,7 +104,7 @@ export default {
     .tenseconds-success {
         margin: auto;
     }
-    
+
     .quarter {
         @include media(small) {
             width: 100% !important;

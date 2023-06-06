@@ -1,6 +1,6 @@
 <template>
     <div v-if="show" class="paypal-payment-container">
-        <PayPal 
+        <PayPal
             ref="paypal"
             :client="credentials"
             :plan_id="plan_id"
@@ -65,7 +65,7 @@ export default {
         },
         purchase () {
             if (this.valid.$invalid === false ) {
-                this.$refs.paypal 
+                this.$refs.paypal
             } else {
                 this.$emit('not-valid')
             }

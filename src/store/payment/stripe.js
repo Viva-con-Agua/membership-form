@@ -1,7 +1,7 @@
 import api from '../api.js'
 const stripe = {
     namespaced: true,
-    state: () => ({  
+    state: () => ({
             status: "",
             terms: false,
             payment_method: null

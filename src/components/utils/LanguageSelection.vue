@@ -13,10 +13,10 @@ export default {
   name: 'LanguageSelection',
   data() {
     return {
-      languages: [ 
-        { "lang": "de-DE", "flag": "de" }, 
-        { "lang": "de-CH", "flag": "ch" }, 
-        { "lang": "en-GB", "flag": "gb" } 
+      languages: [
+        { "lang": "de-DE", "flag": "de" },
+        { "lang": "de-CH", "flag": "ch" },
+        { "lang": "en-GB", "flag": "gb" }
       ],
       language: localStorage.language
     }

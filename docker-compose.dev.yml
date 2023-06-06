@@ -3,8 +3,8 @@ version: '3'
 services:
   app:
     image: vivaconagua/membership-form:latest
-    build: 
-      context: . 
+    build:
+      context: .
       dockerfile: Dockerfile.dev
     restart: always
     env_file:
@@ -19,4 +19,3 @@ networks:
   domain_net:
     external:
       name: domain_net
-

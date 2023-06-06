@@ -46,7 +46,7 @@ export default {
     },
     methods: {
         isInvalid(e) {
-            this.$emit("isInvalid", e)            
+            this.$emit("isInvalid", e)
         },
         success() {
             this.$emit("success")

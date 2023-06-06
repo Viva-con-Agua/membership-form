@@ -60,7 +60,7 @@ Vue.mixin({
             window.top.postMessage({
                 event: "tracking-trigger",
                 data: {
-                    event: "trigger-membership-form", 
+                    event: "trigger-membership-form",
                     category: "MembershipForm",
                     action: action,
                     name: name,

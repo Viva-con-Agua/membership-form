@@ -23,7 +23,7 @@ call.interceptors.response.use((response) => {
                 reject(error);
             });
         }
-        return new Promise((resolve, reject) => 
+        return new Promise((resolve, reject) =>
             call.get('/v1/auth/refresh')
                 .then((response) => {
                     if (response.status === 200) {

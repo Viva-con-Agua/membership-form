@@ -7,7 +7,10 @@
         "serve_docker": "vue-cli-service serve --port 80",
         "widget": "vue-cli-service build --target wc --inline-vue --name donation-form ./src/main.wc.js",
         "build": "vue-cli-service build",
-        "lint": "vue-cli-service lint"
+        "lint": "vue-cli-service lint",
+        "build-develop": "vue-cli-service build --mode develop",
+        "build-stage": "vue-cli-service build --mode stage",
+        "build-main": "vue-cli-service build --mode main"
     },
     "dependencies": {
         "@gtm-support/vue2-gtm": "^1.1.0",

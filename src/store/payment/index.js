@@ -39,7 +39,7 @@ const payment = {
     },
     mutations: {
         create(state, val) {
-            state.payment_id = val.id  
+            state.payment_id = val.id
         },
         money(state, val) {
             if (!val.currency) {
@@ -106,7 +106,7 @@ const payment = {
         }
     },
     actions: {
-        
+
         async process({dispatch, state}) {
             if (state.payment_id != null) {
                 await dispatch("update")

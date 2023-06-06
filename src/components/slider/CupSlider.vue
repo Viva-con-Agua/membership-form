@@ -73,7 +73,7 @@ export default {
     width: 100%;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;   
+    box-sizing: border-box;
 
 
 }
@@ -82,7 +82,7 @@ export default {
     width: 100%;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;   
+    box-sizing: border-box;
 
 
 }
@@ -95,13 +95,13 @@ export default {
     padding: 5px;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }
 .count input[type=range] {
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;   
-} 
+    box-sizing: border-box;
+}
 
 
 

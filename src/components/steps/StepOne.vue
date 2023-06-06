@@ -1,13 +1,13 @@
 <template>
     <div class="stepone">
-        
+
         <Expiration v-if="setting == 'gift'"/>
         <Interval />
         <AmountButtons />
         <Amount ref="amount" />
 
         <vca-arrow-navigation @next="submit" :showBack="false" :nextLabel="this.$t('buttons.next')" :nextEnabled="isValid"/>
-        
+
     </div>
 
 </template>
