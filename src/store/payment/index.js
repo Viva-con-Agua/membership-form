@@ -124,7 +124,7 @@ const payment = {
             }
             data.contact.country = country
             return new Promise((resolve, reject) => {
-                api.call.post('/v1/donations/payment', data)
+                api.call.post('/payment', data)
                     .then((response) => {commit("create", response.data.payload), resolve()})
                     .catch((error) => {
                         reject(error)
@@ -141,7 +141,7 @@ const payment = {
             }
             data.contact.country = country
             return new Promise((resolve, reject) => {
-                api.call.put('/v1/donations/payment', data)
+                api.call.put('/payment', data)
                     .then((response) => {console.log(response), resolve()})
                     .catch((error) => {
                         reject(error)

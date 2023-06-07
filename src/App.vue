@@ -49,7 +49,9 @@ export default {
                 },
             };
             parent.postMessage(message, '*');
-            console.log('message sent with: ', contentHeight);
+            if (process.env.VUE_APP_MODE === "debug") {
+                console.log('client height: ', contentHeight);
+            }
         },
     },
     mounted() {

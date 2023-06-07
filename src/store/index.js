@@ -72,7 +72,7 @@ export default new Vuex.Store({
         },
         async process({dispatch}) {
                 await dispatch("payment/process").catch((error) => {console.log(error)})
-                await dispatch("membership/process")
+                //await dispatch("membership/process")
         },
         contact({state}) {
 
@@ -101,7 +101,7 @@ export default new Vuex.Store({
             }
 
             return new Promise((resolve, reject) => {
-                api.call.post('/v1/donations/feedback', data)
+                api.call.post('/feedback', data)
                     .then(response => { resolve(response)})
                     .catch(error => { reject(error) })
             })

@@ -2,7 +2,7 @@ import axios from 'axios'
 //import store from './index.js'
 
 var call = axios.create({
-    baseURL: process.env.VUE_APP_BACKEND_URL,
+    baseURL: process.env.VUE_APP_BACKEND_URL + process.env.VUE_APP_BACKEND_CONTEXT,
     headers: {
         'Content-Type': 'application/json'
     },

@@ -57,7 +57,7 @@ Vue.mixin({
             return new Date(val * 1000).toLocaleDateString(this.$i18n.locale, options)
         },
         tracker (action, name, value) {
-            window.top.postMessage({
+            var event = {
                 event: "tracking-trigger",
                 data: {
                     event: "trigger-membership-form",
@@ -66,7 +66,11 @@ Vue.mixin({
                     name: name,
                     value: value
                 }
-            }, "*")
+            }
+            window.top.postMessage(event, "*")
+            if (process.env.VUE_APP_MODE === "debug") {
+                console.log("gtm-event: ",event)
+            }
         }
     }
 })
