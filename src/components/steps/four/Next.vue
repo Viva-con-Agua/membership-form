@@ -46,6 +46,7 @@ export default {
     },
     methods: {
         submit() {
+            this.trackingTrigger({event: "signup_newsletter", source: "membership_form"})
             this.tracker("newsletter", "StepFour-Newsletter", 0)
             this.$store.dispatch({type: 'newsletter'})
             .then((resp) => {

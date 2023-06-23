@@ -73,6 +73,7 @@ export default {
     },
     methods: {
         submit() {
+            this.trackingTrigger({event: "submit_feedback_form", source: "membership_form"})
             this.tracker("contact_us", "StepFour-Contact-Us", 0)
             this.$refs.comment.validate()
 

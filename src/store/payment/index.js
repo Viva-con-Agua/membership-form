@@ -35,7 +35,8 @@ const payment = {
         country: [],
         abo: false,
         cycles: 0,
-        donation_receipt: false
+        donation_receipt: false,
+        trackingData: {}
     },
     mutations: {
         create(state, val) {
@@ -77,6 +78,40 @@ const payment = {
         },
         donation_receipt(state, val) {
             state.donation_receipt = val
+        },
+        trackingData(state, val) {
+            var data = {
+                event: val,
+                currency: state.money.currency,
+                donation_value: state.money.amount / 100,
+                donation_interval: "recurring",
+                donation_per_year: 1,
+                yearly_donation_value: undefined,
+                donation_customer_type: undefined,
+                value: undefined
+            }
+                switch(state.interval) {
+                    case "monthly":
+                        data.donation_per_year = 12
+                        break
+                    case "quarterly":
+                        data.donation_per_year = 4
+                        break
+                    case "half":
+                        data.donation_per_year = 2
+                        break
+                    default:
+                        data.donation_per_year = 1
+                }
+            data.yearly_donation_value = data.donation_value * data.donation_per_year
+            if (state.contact.email !== "") {
+                if (state.contact.company_name === "") {
+                    data.donation_customer_type = "private"
+                } else {
+                    data.donation_customer_type = "business"
+                }
+            }
+            state.trackingData = data
         }
     },
     getters: {
@@ -103,6 +138,9 @@ const payment = {
         },
         donation_receipt(state) {
             return state.donation_receipt
+        },
+        trackingData(state) {
+            return JSON.parse(JSON.stringify(state.trackingData))
         }
     },
     actions: {

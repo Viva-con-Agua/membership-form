@@ -72,7 +72,9 @@ export default new Vuex.Store({
         },
         async process({dispatch}) {
                 await dispatch("payment/process").catch((error) => {console.log(error)})
-                //await dispatch("membership/process")
+                if (process.env.VUE_APP_MEMBERSHIP_SKIP !== "skip") {
+                    await dispatch("membership/process")
+                }
         },
         contact({state}) {
 

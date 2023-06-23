@@ -71,7 +71,17 @@ Vue.mixin({
             if (process.env.VUE_APP_MODE === "debug") {
                 console.log("gtm-event: ",event)
             }
+        },
+        trackingTrigger(data) {
+        var event = {
+            event: "tracking-trigger",
+            data: data
         }
+        window.top.postMessage(event, "*")
+        if (process.env.VUE_APP_MODE === "debug") {
+            console.log("tracking-event: ", event)
+        }
+    }
     }
 })
 
