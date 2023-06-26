@@ -6,10 +6,10 @@
         <AmountButtons />
         <Amount ref="amount" />
 
-        <vca-arrow-navigation 
-        @next="submit" 
-        :showBack="false" 
-        :nextLabel="this.$t('buttons.next')" 
+        <vca-arrow-navigation
+        @next="submit"
+        :showBack="false"
+        :nextLabel="this.$t('buttons.next')"
         :nextEnabled="isValid"
         v-observe-visibility="visibilityChanged"/>
 
