@@ -36,7 +36,16 @@ const payment = {
         abo: false,
         cycles: 0,
         donation_receipt: false,
-        trackingData: {}
+        trackingData: {
+            event: "view_membership_form_step1",
+            currency: undefined,
+            donation_value: undefined,
+            donation_interval: undefined,
+            donation_per_year: undefined,
+            yearly_donation_value: undefined,
+            donation_customer_type: undefined,
+            value: undefined
+        }
     },
     mutations: {
         create(state, val) {

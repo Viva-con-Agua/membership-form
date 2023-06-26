@@ -41,7 +41,8 @@ export default {
         },
         submit() {
             this.$store.commit("payment/trackingData", "view_membership_form_step3")
-            this.trackingTrigger(this.trackingData)
+            var data = this.trackingData
+            this.trackingTrigger(data)
             this.tracker("next", "StepTwo-Next", 0)
             this.$store.dispatch("process").then(() => {
                 this.$emit("submit")

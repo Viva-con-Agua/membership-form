@@ -8,6 +8,7 @@ import store from './store'
 import getUserLocale from 'get-user-locale';
 import VueI18n from 'vue-i18n'
 import FlagIcon from 'vue-flag-icon'
+import VueObserveVisibility from 'vue-observe-visibility'
 import 'vca-ui/dist/vca-ui.css'
 
 //import wrap from '@vue/web-component-wrapper';
@@ -20,6 +21,7 @@ Vue.use(VcaUi)
 Vue.use(VueI18n)
 Vue.use(Vuelidate)
 Vue.use(FlagIcon)
+Vue.use(VueObserveVisibility)
 Vue.config.productionTip = false
 
 
