@@ -44,7 +44,6 @@ const payment = {
             donation_per_year: undefined,
             yearly_donation_value: undefined,
             donation_customer_type: undefined,
-            value: undefined
         }
     },
     mutations: {
@@ -97,7 +96,6 @@ const payment = {
                 donation_per_year: 1,
                 yearly_donation_value: undefined,
                 donation_customer_type: undefined,
-                value: undefined
             }
                 switch(state.interval) {
                     case "monthly":
