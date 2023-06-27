@@ -1,7 +1,7 @@
 <template>
     <div class="paypal-payment-container">
         <vca-field :label="$t('payment.more_details')">
-            <PayPal 
+            <PayPal
                 ref="paypal"
                 :amount="amount"
                 :currency="currency"
@@ -64,7 +64,7 @@ export default {
             this.$emit("not-valid")
         },
         purchase () {
-            this.$refs.paypal 
+            this.$refs.paypal
         }
     }
 }

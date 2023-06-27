@@ -72,7 +72,9 @@ export default new Vuex.Store({
         },
         async process({dispatch}) {
                 await dispatch("payment/process").catch((error) => {console.log(error)})
-                await dispatch("membership/process")
+                if (process.env.VUE_APP_MEMBERSHIP_SKIP !== "skip") {
+                    await dispatch("membership/process")
+                }
         },
         contact({state}) {
 
@@ -101,7 +103,7 @@ export default new Vuex.Store({
             }
 
             return new Promise((resolve, reject) => {
-                api.call.post('/v1/donations/feedback', data)
+                api.call.post(process.env.VUE_APP_BACKEND_CONTEXT + '/feedback', data)
                     .then(response => { resolve(response)})
                     .catch(error => { reject(error) })
             })

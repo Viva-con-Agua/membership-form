@@ -57,7 +57,7 @@ const form = {
     actions: {
         get({commit}, data) {
             return new Promise((resolve, reject) => {
-                api.call.get('/v1/donations/form/' + data.data)
+                api.call.get(process.env.VUE_APP_BACKEND_CONTEXT + '/form/' + data.data)
                     .then((response) => {
                         commit('get', response.data.payload), commit('payment/default_amount', response.data.payload.default_amount, {root: true}), resolve()
                     })

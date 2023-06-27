@@ -80,7 +80,7 @@ const paypal = {
                 status: state.status
             }
             return new Promise((resolve, reject) => {
-                    api.call.post('/v1/donations/payment/paypal/checkout', data)
+                    api.call.post(process.env.VUE_APP_BACKEND_CONTEXT + '/payment/paypal/checkout', data)
                     .then((response) => {
                         if (response.status == 201) {
                             resolve()
@@ -100,7 +100,7 @@ const paypal = {
                 product_id: rootState.form.current.product.paypal_id
             }
             return new Promise((resolve, reject) => {
-                    api.call.post('/v1/donations/payment/paypal/subscription', data)
+                    api.call.post(process.env.VUE_APP_BACKEND_CONTEXT + '/payment/paypal/subscription', data)
                     .then((response) => {
                             commit("plan_id", response.data.payload.subscription_plan_id)
                             commit("start_time", response.data.payload.start_time)
@@ -118,7 +118,7 @@ const paypal = {
                 status: state.status
             }
             return new Promise((resolve, reject) => {
-                api.call.put('/v1/donations/payment/paypal/subscription', data)
+                api.call.put(process.env.VUE_APP_BACKEND_CONTEXT + '/payment/paypal/subscription', data)
                 .then((response) => {
                         if (response.status == 200) {
                             resolve()

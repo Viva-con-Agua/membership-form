@@ -29,7 +29,7 @@ export default {
     created() {
         this.setFaucet(this.money)
     },
-    computed: {       
+    computed: {
         ...mapGetters({
            minAmount: 'form/minAmount'
         }),
@@ -138,9 +138,9 @@ export default {
       /* IE
       */
       .slider::-ms-fill-lower {
-        background-color: $main-color; 
+        background-color: $main-color;
       }
-      .slider::-ms-fill-upper {  
+      .slider::-ms-fill-upper {
         background-color: $primary-light;
       }
 
@@ -148,11 +148,11 @@ export default {
       /* Firefox
       */
       .slider::-moz-range-progress {
-        background-color: $main-color; 
+        background-color: $main-color;
         height: 15px;
         border-radius: 8px;
       }
-      .slider::-moz-range-track {  
+      .slider::-moz-range-track {
         background-color: $primary-light;
       }
       .slider::-moz-range-thumb {
@@ -183,8 +183,8 @@ export default {
     .count input[type=range] {
       -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
       -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-      box-sizing: border-box;   
-    } 
+      box-sizing: border-box;
+    }
 
   }
 </style>

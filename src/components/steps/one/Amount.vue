@@ -1,6 +1,6 @@
 <template>
     <vca-field class="typo-roboto" :label="this.$t('amount.label', {0: this.minAmount / 100, 1: this.money.currency})">
-        <vca-money-input 
+        <vca-money-input
             ref="money"
             v-model="money"
             css="main-color"

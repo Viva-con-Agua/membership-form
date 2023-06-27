@@ -44,14 +44,14 @@ export default {
         onClick(data) {
             if(this.disabled) {
                 this.$emit('payment-validation-error', data);
-            } 
+            }
         },
         onInit(data, actions) {
             ppActions = actions
             this.disabled ? actions.disable() : actions.enable()
         },
     },
-    watch: { 
+    watch: {
         disabled: function(nVal) {
             if (nVal == false) {
                 ppActions.enable()
