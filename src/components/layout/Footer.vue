@@ -20,7 +20,7 @@ export default {
 </script>
 <style lang="scss">
 .payment-footer {
-    
+
     display: block;
     ul {
         padding-left: 0;

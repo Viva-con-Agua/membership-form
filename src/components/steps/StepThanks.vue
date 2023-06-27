@@ -6,7 +6,7 @@
         <TenSeconds/>
 
     </div>
- </template> 
+ </template>
 <script>
 import Thanks from '@/components/steps/four/Thanks'
 import Next from '@/components/steps/four/Next'

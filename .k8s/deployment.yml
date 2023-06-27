@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: membership-form
+    labels: &labels
+        app.kubernetes.io/name: membership-form
+spec:
+    selector:
+        matchLabels: *labels
+    template:
+        metadata:
+            labels: *labels
+        spec:
+            containers:
+                - name: membership-form
+                  image: ghcr.io/viva-con-agua/membership-form
+                  imagePullPolicy: Always
+                  ports:
+                      - name: http
+                        containerPort: 80
+                  readinessProbe:
+                      httpGet:
+                          port: http
+                  livenessProbe:
+                      httpGet:
+                          port: http

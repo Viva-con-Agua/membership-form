@@ -8,15 +8,15 @@
             :infinite="false"
             :slide-ratio="1 / 3"
             >
-            
+
             <template #arrow-left>
                 <div class="swiper-button-prev"></div>
             </template>
 
-            <template #arrow-right>    
+            <template #arrow-right>
                 <div class="swiper-button-next"></div>
             </template>
-            
+
 
             <vueper-slide
                 v-for="(slide, i) in slides"
@@ -35,15 +35,15 @@
             :infinite="false"
             :slide-ratio="1 / 6"
             >
-            
+
             <template #arrow-left>
                 <div class="swiper-button-prev"></div>
             </template>
 
-            <template #arrow-right>    
+            <template #arrow-right>
                 <div class="swiper-button-next"></div>
             </template>
-            
+
 
             <vueper-slide
                 v-for="(slide, i) in slides"
@@ -53,7 +53,7 @@
 
         </vueper-slides>
     </div>
- </template> 
+ </template>
 
 <script>
 
@@ -81,7 +81,7 @@ export default {
 
     .slider-container {
 
-        width: 90%; 
+        width: 90%;
         margin: auto;
         box-sizing: border-box;
 

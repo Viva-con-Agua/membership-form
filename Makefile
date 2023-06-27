@@ -1,4 +1,7 @@
-.PHONY: serve build
+.PHONY: serve build pre-commit
+
+pre-commit:
+	pre-commit run --show-diff-on-failure --color=always --all-files
 
 build:
 	docker-compose build --force-rm --no-cache
@@ -6,5 +9,5 @@ build:
 build-dev:
 	docker-compose -f docker-compose.dev.yml build --force-rm --no-cache
 
-serve:
+serve-dev:
 	docker-compose -f docker-compose.dev.yml up -d

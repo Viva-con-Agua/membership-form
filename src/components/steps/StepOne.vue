@@ -1,13 +1,18 @@
 <template>
     <div class="stepone">
-        
+
         <Expiration v-if="setting == 'gift'"/>
         <Interval />
         <AmountButtons />
         <Amount ref="amount" />
 
-        <vca-arrow-navigation @next="submit" :showBack="false" :nextLabel="this.$t('buttons.next')" :nextEnabled="isValid"/>
-        
+        <vca-arrow-navigation
+        @next="submit"
+        :showBack="false"
+        :nextLabel="this.$t('buttons.next')"
+        :nextEnabled="isValid"
+        v-observe-visibility="visibilityChanged"/>
+
     </div>
 
 </template>
@@ -37,7 +42,8 @@ export default {
     },
     computed: {
         ...mapGetters({
-            setting: 'form/setting'
+            setting: 'form/setting',
+            trackingData: 'payment/trackingData'
         }),
         hasSubscription() {
             return this.$store.state.form.current.subscription_types != null
@@ -45,8 +51,18 @@ export default {
     },
     methods: {
         submit() {
+            this.$store.commit("payment/trackingData", "view_membership_form_step2")
+            var data = this.trackingData
+            this.trackingTrigger(data)
             this.tracker("next", "StepOne-Next", 0)
             this.$emit("submit")
+        },
+        visibilityChanged(isVisible, entry) {
+            this.isVisible = isVisible
+            if (entry.isIntersecting && !this.tracked) {
+                this.tracked = true
+                this.trackingTrigger(this.trackingData)
+            }
         }
     },
 }

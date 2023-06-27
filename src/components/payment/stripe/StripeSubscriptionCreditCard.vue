@@ -55,7 +55,7 @@ export default {
         this.elements = this.stripe.elements()
         this.element = this.elements.create('card', this.options)
 
-        this.element.on('change', (event) => { 
+        this.element.on('change', (event) => {
             if (!event.complete) {
                 this.cardInvalid = true
             } else {

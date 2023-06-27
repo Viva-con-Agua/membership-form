@@ -13,12 +13,12 @@
             <p class="text-center">{{ $t('next.yours') }}</p>
         </vca-field>
     </vca-card>
- </template> 
+ </template>
 
 <script>
 import { required, email} from 'vuelidate/lib/validators'
 export default {
-    name: 'Next',    
+    name: 'Next',
     data() {
         return {
             flow: true
@@ -46,6 +46,7 @@ export default {
     },
     methods: {
         submit() {
+            this.trackingTrigger({event: "signup_newsletter", source: "membership_form"})
             this.tracker("newsletter", "StepFour-Newsletter", 0)
             this.$store.dispatch({type: 'newsletter'})
             .then((resp) => {

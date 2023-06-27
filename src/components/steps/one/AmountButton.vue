@@ -43,7 +43,7 @@ export default {
             return (this.amount == val) ? 'selected' : ''
         },
         modulo(index, mod) {
-            return ((index + 1) % mod) == 1 
+            return ((index + 1) % mod) == 1
         }
     }
 }
@@ -57,7 +57,7 @@ export default {
 .btn-drop {
     cursor: pointer;
     background-image:url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="0 0 4442 720"><g transform="translate(0.000000,210.000000) scale(0.100000,-0.100000)"><path d="M566 2081 c-18 -19 -17 -22 12 -73 17 -29 36 -74 42 -100 11 -44 10 -52 -13 -100 -16 -33 -74 -104 -153 -188 -179 -191 -240 -263 -301 -356 -161 -248 -192 -499 -91 -742 123 -295 387 -471 773 -513 201 -22 448 23 644 117 439 210 622 641 461 1086 -163 450 -678 797 -1311 883 -37 5 -48 2 -63 -14z"/></g></svg>');
-    
+
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -91,7 +91,7 @@ export default {
                 width: 30px;
                 bottom: 0 !important;
                 @include media(large) {
-                    width: 35px;                
+                    width: 35px;
                 }
             }
         }

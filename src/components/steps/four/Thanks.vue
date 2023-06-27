@@ -3,7 +3,7 @@
         <h1 class="text-center">{{ $t('thanks.header') }}</h1>
         <h2 class="text-center">{{ $t('thanks.subheader') }}</h2>
     </vca-card>
- </template> 
+ </template>
 
 <script>
 import { mapGetters } from 'vuex'

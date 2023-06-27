@@ -32,7 +32,8 @@ export default {
             money: 'payment/money',
             interval: 'payment/interval',
             paymentType: 'payment/payment_type',
-            cycles: 'payment/cycles'
+            cycles: 'payment/cycles',
+            trackingData: 'payment/trackingData'
         }),
         getLabel() {
             return this.$t('payment.submit', {0: Money.convertDE(this.money.amount), 1: this.money.currency})
@@ -58,6 +59,8 @@ export default {
         },
         commit() {
             this.$store.commit('loadingFlow')
+            this.$store.commit("payment/trackingData", "view_membership_form_step4")
+            this.trackingTrigger(this.trackingData)
             var value = 0
             if (this.interval == "monthly") {
                 value = (this.money.amount * 12) / 100

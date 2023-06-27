@@ -26,7 +26,7 @@
             </div>
         </vca-field>
     </vca-card>
- </template> 
+ </template>
 <script>
 import { required } from 'vuelidate/lib/validators'
 export default {
@@ -73,6 +73,7 @@ export default {
     },
     methods: {
         submit() {
+            this.trackingTrigger({event: "submit_feedback_form", source: "membership_form"})
             this.tracker("contact_us", "StepFour-Contact-Us", 0)
             this.$refs.comment.validate()
 
@@ -87,7 +88,7 @@ export default {
             .catch((error) => {
                 console.log(error)
             })
-            
+
             this.$store.dispatch({type: 'contact'})
             .then((resp) => {
                 this.flow = false
@@ -104,7 +105,7 @@ export default {
     .tenseconds-success {
         margin: auto;
     }
-    
+
     .quarter {
         @include media(small) {
             width: 100% !important;

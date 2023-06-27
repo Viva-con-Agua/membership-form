@@ -195,7 +195,7 @@
   "thanks": {
     "header": "DANKE",
     "subheader": "für deinen Support und dein Vertrauen!",
-    "text": "Deine Spende über {0} hat {1}",    
+    "text": "Deine Spende über {0} hat {1}",
     "example": {
       "default": "unter anderem in unserem Projektland Uganda noch mehr Menschen den Zugang zu sauberem Trinkwasser ermöglicht",
       "soap": "unter anderem in unserem Projektland Uganda mindestens 20 l Seife für Schulen zur Verfügung gestellt.",
