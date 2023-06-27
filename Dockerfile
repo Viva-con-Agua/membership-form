@@ -18,16 +18,16 @@ RUN npm run build-stage
 
 FROM docker.io/nginx:mainline as stage
 ADD .docker/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build-develop /app/src/dist/ /var/www/
+COPY --from=build-stage /app/src/dist/ /var/www/
 EXPOSE 80/tcp
 
 FROM node:14 as build-main
 WORKDIR /app/src
 ADD ./ /app/src/
 RUN npm clean-install
-RUN npm run build-develop
+RUN npm run build-main
 
 FROM docker.io/nginx:mainline as main
 ADD .docker/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build-develop /app/src/dist/ /var/www/
+COPY --from=build-main /app/src/dist/ /var/www/
 EXPOSE 80/tcp

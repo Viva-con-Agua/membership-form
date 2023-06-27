@@ -169,7 +169,7 @@ const payment = {
             }
             data.contact.country = country
             return new Promise((resolve, reject) => {
-                api.call.post('/payment', data)
+                api.call.post(process.env.VUE_APP_BACKEND_CONTEXT + '/payment', data)
                     .then((response) => {commit("create", response.data.payload), resolve()})
                     .catch((error) => {
                         reject(error)
@@ -186,7 +186,7 @@ const payment = {
             }
             data.contact.country = country
             return new Promise((resolve, reject) => {
-                api.call.put('/payment', data)
+                api.call.put(process.env.VUE_APP_BACKEND_CONTEXT + '/payment', data)
                     .then((response) => {console.log(response), resolve()})
                     .catch((error) => {
                         reject(error)

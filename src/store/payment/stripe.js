@@ -40,7 +40,7 @@ const stripe = {
                 status: "created"
             }
             return new Promise((resolve, reject) => {
-                api.call.post('/payment/stripe/paymentintent', data)
+                api.call.post(process.env.VUE_APP_BACKEND_CONTEXT + '/payment/stripe/paymentintent', data)
                     .then((response) => {resolve(response)})
                     .catch((error) => {
                         reject(error)
@@ -56,7 +56,7 @@ const stripe = {
                 status: state.status
             }
             return new Promise((resolve, reject) => {
-                api.call.put('/payment/stripe/paymentintent', data)
+                api.call.put(process.env.VUE_APP_BACKEND_CONTEXT + '/payment/stripe/paymentintent', data)
                     .then((response) => {console.log(response), resolve()})
                     .catch((error) => {
                         reject(error)
@@ -74,7 +74,7 @@ const stripe = {
 
             }
             return new Promise((resolve, reject) => {
-                api.call.post('/payment/stripe/setupintent', data)
+                api.call.post(process.env.VUE_APP_BACKEND_CONTEXT + '/payment/stripe/setupintent', data)
                     .then((response) => {resolve(response)})
                     .catch((error) => {
                         reject(error)
@@ -89,7 +89,7 @@ const stripe = {
                 status: state.status
             }
             return new Promise((resolve, reject) => {
-                api.call.put('/payment/stripe/setupintent', data)
+                api.call.put(process.env.VUE_APP_BACKEND_CONTEXT + '/payment/stripe/setupintent', data)
                     .then((response) => {console.log(response), resolve()})
                     .catch((error) => {
                         reject(error)
