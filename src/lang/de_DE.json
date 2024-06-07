@@ -169,6 +169,9 @@
             "placeholder": "Land *",
             "error": "Bitte gib dein Land ein"
         },
+        "birthdate": {
+            "placeholder": "Geburtsdatum"
+        },
         "selectCountry": {
             "label": "Bitte wähle aus in welcher Währung du gerne zahlen möchtest",
             "placeholder": "Bitte Organisation auswählen",
