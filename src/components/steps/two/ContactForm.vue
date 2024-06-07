@@ -40,7 +40,6 @@
                     </vca-input>
                 </vca-field-row>
 
-
                     <vca-field-row>
                         <vca-input
                             ref="street"
@@ -85,6 +84,13 @@
 
                         <vca-country preselection="DE" countryCode="DE" :rules="$v.country" ref="country" v-model="country" label="" :placeholder="$t('contactform.country.placeholder')" :errorMsg="$t('contactform.country.error')"/>
 
+                    <vca-input-date
+                    :placeholder="
+                    $t('contactform.birthdate.placeholder')
+                    "
+                    v-model.trim="anonymous.birthdate"
+                    >
+                    </vca-input-date>
                 <div class="color-grey vca-right">{{ $t('contactform.required') }}</div>
             </vca-field>
 
