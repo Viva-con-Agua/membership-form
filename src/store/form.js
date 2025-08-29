@@ -44,6 +44,9 @@ const form = {
         },
         setting(state) {
             return state.setting
+        },
+        deprecated(state) {
+            return state.current.deprecated;
         }
     },
     mutations: {
