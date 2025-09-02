@@ -1,9 +1,8 @@
 <template>
     <div>
         <vca-loading v-if="loadingFlow" />
-        <div v-if="deprecated">
-            <Headline :text="$t('error.deprecated.headline')" />
-            <vca-card v-html="$t('error.deprecated.text')"></vca-card>
+        <div v-else-if="expired">
+            <ExpiredPage />
         </div>
         <div v-else>
             <Headline :text="getText" />
@@ -41,6 +40,7 @@
     //import LanguageSelection from "@/components/utils/LanguageSelection"
     import Headline from '@/components/layout/Headline';
     import { mapGetters } from 'vuex';
+    import ExpiredPage from './steps/ExpiredPage.vue';
     export default {
         name: 'DonationForm',
         components: {
@@ -52,6 +52,7 @@
             PaymentFooter,
             HeaderSteps,
             Headline /*, ThanksFooter */,
+            ExpiredPage,
         },
         props: {
             donation_form_id: {
@@ -111,7 +112,7 @@
                 product: 'form/product',
                 minAmount: 'form/minAmount',
                 loadingFlow: 'loadingFlow',
-                deprecated: 'form/deprecated',
+                expired: 'form/expired',
             }),
             getText() {
                 return this.step == 4 ? this.$t('headline.thanks') : this.$t('headline.donate');
