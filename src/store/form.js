@@ -44,6 +44,12 @@ const form = {
         },
         setting(state) {
             return state.setting
+        },
+        expired(state) {
+            return state.current.expired;
+        },
+        expired_form(state) {
+            return state.current.expired_form
         }
     },
     mutations: {

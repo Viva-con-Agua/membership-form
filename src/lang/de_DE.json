@@ -43,7 +43,11 @@
         }
     },
     "error": {
-        "payment": "Oh je, da ist leider ein Fehler passiert. Das tut uns leid. Wende dich bitte an kontakt@vivaconagua.org und gib diese Payment ID mit an"
+        "payment": "Oh je, da ist leider ein Fehler passiert. Das tut uns leid. Wende dich bitte an kontakt@vivaconagua.org und gib diese Payment ID mit an",
+        "deprecated": {
+            "headline": "Uuuups, das Formular wird nicht mehr verwendet.",
+            "text": "Bitte melde dich bei kontakt@vivaconagua.org"
+        }
     },
     "headline": {
         "donate": "Jetzt Fördermitglied werden",
@@ -290,6 +294,14 @@
             "imprint": "Impressum",
             "language": "Sprache",
             "contact": "Kontakt"
+        }
+    },
+    "error_page": {
+        "expired": {
+            "headline": "Das Formular ist abgelaufen",
+            "fallback_url": "zum neuen Formular",
+            "contact": "Bei Fragen oder Problemen melde dich gerne bei ",
+            "description": "Mit dem Button geht es zum neuen Formular."
         }
     }
 }
